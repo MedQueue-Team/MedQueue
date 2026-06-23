@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:elevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@android:drawable/ic_menu_revert"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consultation"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnProfile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@android:drawable/ic_menu_myplaces"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Patient Profile Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="16dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+                    <ImageView
+                        android:id="@+id/ivPatientPhoto"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@android:drawable/ic_menu_gallery"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/tvPatientName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Elena Rodriguez"
+                        android:textColor="@color/primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintStart_toEndOf="@id/ivPatientPhoto"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/tvPatientDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="32Y, Female • O+ Positive"
+                        android:textColor="@color/outline"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvPatientName"
+                        app:layout_constraintTop_toBottomOf="@id/tvPatientName" />
+                    <TextView
+                        android:id="@+id/tvPatientId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ID: LSK-KNH-004582"
+                        android:textColor="@color/outline"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvPatientDetails"
+                        app:layout_constraintTop_toBottomOf="@id/tvPatientDetails" />
+                    <TextView
+                        android:id="@+id/tvPatientStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/secondary_container"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        android:text="Active"
+                        android:textColor="@color/on_secondary_container"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/tvPatientRoom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A-12"
+                        android:textColor="@color/primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvPatientStatus"
+                        android:gravity="end" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Medical History Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/rlMedicalHistoryHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medical History"
+                            android:textColor="@color/primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true" />
+                        <ImageView
+                            android:id="@+id/ivMedicalHistoryExpand"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/arrow_up_float"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/llMedicalHistoryContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Previous Diagnoses"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface" />
+                        <TextView
+                            android:id="@+id/tvPrevDiagnoses"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No significant previous diagnoses found."
+                            android:textColor="@color/outline"
+                            android:layout_marginBottom="12dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Previous Prescriptions"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface" />
+                        <TextView
+                            android:id="@+id/tvPrevPrescriptions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Aspirin 75mg (Jan 2024)"
+                            android:textColor="@color/outline"
+                            android:layout_marginBottom="12dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Past Consultations"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface" />
+                        <TextView
+                            android:id="@+id/tvPastConsultations"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="General Checkup (05/01/2024)"
+                            android:textColor="@color/outline" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Current Consultation Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="24dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/rlConsultationHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Current Consultation"
+                            android:textColor="@color/primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true" />
+                        <ImageView
+                            android:id="@+id/ivConsultationExpand"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/arrow_up_float"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/llConsultationContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Symptoms"
+                            android:textColor="@color/on_surface"
+                            android:layout_marginBottom="8dp" />
+                        <EditText
+                            android:id="@+id/etSymptoms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter patient symptoms..."
+                            android:background="@color/surface_container_low"
+                            android:padding="12dp"
+                            android:gravity="top"
+                            android:minLines="3"
+                            android:layout_marginBottom="16dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Diagnosis"
+                            android:textColor="@color/on_surface"
+                            android:layout_marginBottom="8dp" />
+                        <EditText
+                            android:id="@+id/etDiagnosis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter diagnosis..."
+                            android:background="@color/surface_container_low"
+                            android:padding="12dp"
+                            android:layout_marginBottom="16dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Prescription"
+                            android:textColor="@color/on_surface"
+                            android:layout_marginBottom="8dp" />
+                        <EditText
+                            android:id="@+id/etPrescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="List medications and dosages..."
+                            android:background="@color/surface_container_low"
+                            android:padding="12dp"
+                            android:gravity="top"
+                            android:minLines="3"
+                            android:layout_marginBottom="16dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Notes"
+                            android:textColor="@color/on_surface"
+                            android:layout_marginBottom="8dp" />
+                        <EditText
+                            android:id="@+id/etNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Additional clinical notes..."
+                            android:background="@color/surface_container_low"
+                            android:padding="12dp"
+                            android:gravity="top"
+                            android:minLines="3" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Action Buttons -->
+            <Button
+                android:id="@+id/btnSaveRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SAVE RECORD"
+                android:backgroundTint="@color/secondary_container"
+                android:textColor="@color/on_secondary_container"
+                android:layout_marginBottom="12dp"
+                app:cornerRadius="8dp" />
+            <Button
+                android:id="@+id/btnCompleteConsultation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="COMPLETE CONSULTATION"
+                android:backgroundTint="@color/primary"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

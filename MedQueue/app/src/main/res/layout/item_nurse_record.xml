@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/surface_container_lowest"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/outline_variant"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header row: Patient ID + Type Badge -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/tvPatientId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="LSK-KNH-011452"
+                android:textColor="@color/primary"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05" />
+
+            <TextView
+                android:id="@+id/tvTypeBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:text="Inpatient"
+                android:textColor="@color/on_primary_fixed_variant"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:backgroundTint="@color/primary_fixed"
+                android:background="@drawable/bg_chip_rounded" />
+        </LinearLayout>
+
+        <!-- Patient name -->
+        <TextView
+            android:id="@+id/tvPatientName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Catherine Chen"
+            android:textColor="@color/on_surface"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="2dp" />
+
+        <!-- Age & gender -->
+        <TextView
+            android:id="@+id/tvAgeGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="34 yrs • F"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="13sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/outline_variant"
+            android:alpha="0.5"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Doctor row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="6dp"
+                android:src="@drawable/ic_stethoscope"
+                app:tint="@color/on_surface_variant" />
+
+            <TextView
+                android:id="@+id/tvDoctor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dr. Mwangi"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp" />
+
+            <!-- Priority badge on right -->
+            <TextView
+                android:id="@+id/tvPriorityBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:text="HIGH"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:background="@drawable/bg_chip_rounded" />
+        </LinearLayout>
+
+        <!-- Last visit row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="6dp"
+                android:src="@drawable/ic_calendar_month"
+                app:tint="@color/on_surface_variant" />
+
+            <TextView
+                android:id="@+id/tvLastVisit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 May 2026"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Ward row (inpatients only) -->
+        <LinearLayout
+            android:id="@+id/llWard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="6dp"
+                android:src="@drawable/ic_local_hospital"
+                app:tint="@color/on_surface_variant" />
+
+            <TextView
+                android:id="@+id/tvWard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ward 4B"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Action buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewRecord"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="View Record"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:cornerRadius="8dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditRecord"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:text="Edit / Annotate"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:cornerRadius="8dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                app:icon="@drawable/ic_edit"
+                app:iconSize="16dp"
+                app:iconPadding="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

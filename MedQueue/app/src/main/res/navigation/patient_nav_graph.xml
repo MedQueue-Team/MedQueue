@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/patient_nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.mediqueue.ui.patient.PatientDashboardFragment"
+        android:label="Patient Home"
+        tools:layout="@layout/fragment_patient_dashboard">
+        <action
+            android:id="@+id/action_home_to_book"
+            app:destination="@id/nav_patient_book_appointment" />
+        <action
+            android:id="@+id/action_home_to_records"
+            app:destination="@id/nav_records" />
+        <action
+            android:id="@+id/action_home_to_profile"
+            app:destination="@id/nav_profile" />
+        <action
+            android:id="@+id/action_home_to_queue_reg"
+            app:destination="@id/nav_patient_queue_registration" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_appts"
+        android:name="com.example.mediqueue.ui.patient.PatientAppointmentsFragment"
+        android:label="My Appointments"
+        tools:layout="@layout/fragment_patient_appointments">
+        <action
+            android:id="@+id/action_appts_to_book"
+            app:destination="@id/nav_patient_book_appointment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_patient_book_appointment"
+        android:name="com.example.mediqueue.ui.patient.BookAppointmentFragment"
+        android:label="Book Appointment"
+        tools:layout="@layout/fragment_patient_book_appointment" />
+
+    <fragment
+        android:id="@+id/nav_records"
+        android:name="com.example.mediqueue.ui.patient.PatientMedicalRecordsFragment"
+        android:label="Medical Records"
+        tools:layout="@layout/fragment_patient_medical_records" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.mediqueue.ui.patient.PatientProfileFragment"
+        android:label="My Profile"
+        tools:layout="@layout/fragment_patient_profile" />
+
+    <fragment
+        android:id="@+id/nav_patient_queue_registration"
+        android:name="com.example.mediqueue.ui.patient.QueueRegistrationFragment"
+        android:label="Queue Registration"
+        tools:layout="@layout/fragment_patient_queue_registration" />
+
+</navigation>

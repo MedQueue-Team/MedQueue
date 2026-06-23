@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Appointments - MediQueue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001c38",
+                        "outline-variant": "#c2c6d0",
+                        "surface-bright": "#f9f9fe",
+                        "background": "#f9f9fe",
+                        "surface-tint": "#336093",
+                        "tertiary-fixed": "#ffdbc8",
+                        "on-tertiary-fixed-variant": "#71370a",
+                        "surface": "#f9f9fe",
+                        "primary-fixed": "#d2e4ff",
+                        "inverse-on-surface": "#f0f0f5",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e8e8ec",
+                        "on-secondary-fixed-variant": "#3e4a41",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#14487a",
+                        "primary-container": "#003e6f",
+                        "on-background": "#1a1c1f",
+                        "tertiary-container": "#642d01",
+                        "on-tertiary-fixed": "#321300",
+                        "secondary-fixed": "#d9e6da",
+                        "on-primary-container": "#7faae1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#ededf2",
+                        "tertiary-fixed-dim": "#ffb68a",
+                        "surface-container-highest": "#e2e2e7",
+                        "secondary-fixed-dim": "#bdcabf",
+                        "surface-dim": "#d9dade",
+                        "secondary": "#556158",
+                        "on-secondary-container": "#5b675e",
+                        "primary-fixed-dim": "#a1c9ff",
+                        "on-tertiary-container": "#e59461",
+                        "inverse-surface": "#2f3034",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#a1c9ff",
+                        "on-surface-variant": "#42474f",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1a1c1f",
+                        "on-secondary-fixed": "#131e17",
+                        "outline": "#727780",
+                        "surface-container-low": "#f3f3f8",
+                        "tertiary": "#431c00",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#d9e6da",
+                        "surface-variant": "#e2e2e7",
+                        "primary": "#00284b",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "margin-tablet": "24px",
+                        "container-max": "1440px",
+                        "margin-mobile": "16px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-40 bg-surface shadow-[0px_4px_12px_rgba(0,0,0,0.05)] flex items-center px-margin-mobile md:px-margin-desktop py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors text-on-surface">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">My Appointments</h1>
+<span class="font-label-md text-on-surface-variant">Track your appointment status</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-gutter pb-32">
+<!-- Search & Filter Section -->
+<section class="mb-8">
+<div class="relative w-full max-w-xl mb-6">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-body-md transition-all" placeholder="Search doctor, department, or date..." type="text"/>
+</div>
+<div class="flex gap-3 overflow-x-auto no-scrollbar py-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-lg whitespace-nowrap shadow-sm">All</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-lg whitespace-nowrap hover:bg-surface-container-highest transition-colors">Pending</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-lg whitespace-nowrap hover:bg-surface-container-highest transition-colors">Approved</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-lg whitespace-nowrap hover:bg-surface-container-highest transition-colors">Rejected</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-lg whitespace-nowrap hover:bg-surface-container-highest transition-colors">Completed</button>
+</div>
+</section>
+<!-- Appointment List (Bento-ish Grid for Desktop, List for Mobile) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1: Approved -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_24px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between border border-transparent hover:border-primary-fixed-dim">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-primary-fixed bg-surface-container">
+<img alt="Dr. Sarah Jenkins" class="w-full h-full object-cover" data-alt="A professional headshot of Dr. Sarah Jenkins, a female cardiologist in her 40s wearing a white lab coat and a stethoscope. She has a confident and welcoming smile, set against a bright, airy medical office background with soft blue tones and clean lines, reflecting a modern healthcare environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrQRWBLaBwXW10Onk-wB0D0N9GKlC6wA8tMPct38QuWrzJg6I1B8MuIx-wdnPzDL4APJCJmNexI7xsDiSsGazUAzLc7r6AM5es1AosU7uUEw-P5HA5JwfHdxOW80Uv2md_Wh4LSBCAfscxVlaklX-mQt92MtKUzotXaNLqcVyHl5KX_5Ib27dm00UPNDkW979cdalKA2xLcCYV09ZSK55MLl0ibXsVK7zwdKZ9vreMh2XX9icE6UyYoW0I6QHnf58xnab7BQhFpcGI"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dr. Sarah Jenkins</h3>
+<p class="font-body-sm text-on-surface-variant">Cardiology Department</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-green-100 text-green-700 font-label-md">Approved</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6 bg-surface-container-low p-4 rounded-lg">
+<div class="flex flex-col">
+<span class="text-label-sm text-outline uppercase">Date</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span class="font-label-lg">Oct 26, 2023</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm text-outline uppercase">Time</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span class="font-label-lg">09:15 AM</span>
+</div>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-6 flex items-start gap-2">
+<span class="material-symbols-outlined text-[20px] text-outline">description</span>
+                        Reason: Annual checkup and routine blood test results review.
+                    </p>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-lg font-label-lg active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                    Ready for Visit
+                </button>
+</div>
+<!-- Card 2: Pending -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_24px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between border border-transparent hover:border-tertiary-fixed-dim">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-tertiary-fixed bg-surface-container">
+<img alt="Dr. Marcus Chen" class="w-full h-full object-cover" data-alt="A professional portrait of Dr. Marcus Chen, a male general physician in his 30s. He is wearing a medical scrub and glasses, with a friendly and focused expression. The setting is a clean, minimalist consultation room with clinical tech aesthetic, featuring warm, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsEMwOyzwC0L_F-c6THOzgtKFLW5vjRWvU-Xzbk_6le22xb4_uAs7sYnim2ef4vY0FnITIvXP1VclDw3iFlg5JXk3-rS8OGu0gfY7CdxWlneyIMG0vg7LW6v-zMJ29zxT7v8qzLWtTHbrnWo7s1rIAW18egQKmqv-cHWCG8kg_nACJcWCZmiTp_3TVSR3O9BwfNwFgvwLJfiWoyOPNQnbuI6VYprhMG7bYXPy3Y9bBz4NjzxHUd8tPKFOOFkMSfIeiRu03kOu3855D"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dr. Marcus Chen</h3>
+<p class="font-body-sm text-on-surface-variant">General OPD</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 font-label-md">Pending</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6 bg-surface-container-low p-4 rounded-lg">
+<div class="flex flex-col">
+<span class="text-label-sm text-outline uppercase">Date</span>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-label-lg">Oct 28, 2023</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm text-outline uppercase">Time</span>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-lg">11:00 AM</span>
+</div>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-6 flex items-start gap-2">
+<span class="material-symbols-outlined text-[20px] text-outline">description</span>
+                        Reason: Follow-up on persistent symptoms and medication adjustment.
+                    </p>
+</div>
+<button class="w-full py-3 border-2 border-outline-variant text-on-surface-variant rounded-lg font-label-lg flex items-center justify-center gap-2 cursor-wait">
+<span class="material-symbols-outlined text-[20px]">hourglass_empty</span>
+                    Waiting for Approval
+                </button>
+</div>
+<!-- Card 3: Completed -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_24px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between opacity-90 grayscale-[0.2]">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-outline-variant bg-surface-container">
+<img alt="Dr. Elena Rodriguez" class="w-full h-full object-cover" data-alt="A professional profile of Dr. Elena Rodriguez, a female physiotherapist. She is dressed in clinical scrubs and stands in a bright physical therapy studio with rehabilitation equipment softly blurred in the background. The lighting is high-key and optimistic, emphasizing health and recovery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX_vngkGnXNsPg1arUH6oLWKi-k5aWg_BvLg7DBDAeSieigK2MSvwZ2E78gAO4NeTSRKokl7HCQkE_SwWnRofDCxTYo0RxlqEjMVxnm2wLk9BotbDSBzRPxi3YO9E8asQGQBrrA3XzlYunhzUx6Qh3q-vy7NX4UOMdrujB8XM5_n0vEIr6c9DBiC48iAKQhSoQGGx1G0SRyiYZhA7wTyOzG8_dgBUVQuv00L-D7sLxgDHl3YA36Flb_Y2lU6Ny9SCMM7Amrhsnghd1"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dr. Elena Rodriguez</h3>
+<p class="font-body-sm text-on-surface-variant">Physiotherapy</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-outline font-label-md">Completed</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6 bg-surface-container-low p-4 rounded-lg">
+<div class="flex flex-col opacity-60">
+<span class="text-label-sm uppercase">Date</span>
+<span class="font-label-lg">Oct 12, 2023</span>
+</div>
+<div class="flex flex-col opacity-60">
+<span class="text-label-sm uppercase">Time</span>
+<span class="font-label-lg">14:30 PM</span>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-secondary-container text-on-secondary-container rounded-lg font-label-lg hover:brightness-95 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">folder_shared</span>
+                    View Medical Record
+                </button>
+</div>
+<!-- Card 4: Rejected -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_24px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between border-l-4 border-error">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-error-container bg-surface-container">
+<img alt="Dr. Julian Thorne" class="w-full h-full object-cover" data-alt="A portrait of Dr. Julian Thorne, a male surgeon in his 50s with grey hair and a serious, expert demeanor. He is wearing surgical scrubs and cap. The setting is a sterile, high-tech hospital corridor with soft directional lighting and a cool, clinical color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7I_CKepks16knVXJpZMOmqdowF4hzgB2fX8QE0qnEkQaxlKkfOWVhKMHFeTleBv4qctp7EUAF78JP_5sXWuzFFAMpQDNXdJ_7DkkUfRexn6HQCO7JAmmEAKKBVlZZLhtmmoVRLgAFWFzhiuoWM5IpJl5WV9SOVMFSItW1DrV2XL-QYUQORL9lsjeN6lMdCaKtMZO134SkSfBA6Z5vtKAiRDHuXPeh4lclXl1D9ca0-0blbXMmtW3AOVmqH9wRPduZO0HHk0XZhQYi"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dr. Julian Thorne</h3>
+<p class="font-body-sm text-on-surface-variant">Surgery</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-md">Rejected</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6 bg-surface-container-low p-4 rounded-lg">
+<div class="flex flex-col">
+<span class="text-label-sm text-outline uppercase">Proposed Date</span>
+<span class="font-label-lg text-on-surface">Oct 05, 2023</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm text-outline uppercase">Proposed Time</span>
+<span class="font-label-lg text-on-surface">10:00 AM</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-error-container/20 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-error">info</span>
+<div>
+<p class="font-label-lg text-error">Clinic capacity reached</p>
+<p class="text-label-sm text-on-surface-variant">Please select another date or contact support for urgent care.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center bg-surface shadow-[0px_-4px_12px_rgba(0,0,0,0.05)] px-2 py-3 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-md text-label-md">Appointments</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+<span class="font-label-md text-label-md">Records</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<!-- FAB for New Appointment (Desktop only / Floating for mobile) -->
+<button class="fixed right-6 bottom-24 md:bottom-8 bg-primary text-on-primary w-14 h-14 md:w-auto md:px-6 md:h-14 rounded-full md:rounded-xl shadow-lg flex items-center justify-center gap-3 hover:brightness-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined">add</span>
+<span class="hidden md:block font-label-lg">Book New Appointment</span>
+</button>
+<script>
+        // Micro-interaction for filter chips
+        const filterChips = document.querySelectorAll('button.rounded-full');
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                filterChips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary');
+                    c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                });
+                chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+                chip.classList.add('bg-primary', 'text-on-primary');
+            });
+        });
+
+        // Simple scale interaction for cards
+        const cards = document.querySelectorAll('.rounded-xl');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                if (!card.classList.contains('opacity-90')) {
+                    card.style.transform = 'translateY(-4px)';
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

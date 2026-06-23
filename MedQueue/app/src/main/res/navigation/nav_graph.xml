@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.mediqueue.ui.receptionist.NurseDashboardFragment"
+        android:label="Nurse Home"
+        tools:layout="@layout/fragment_nurse_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_queue"
+        android:name="com.example.mediqueue.ui.receptionist.NurseQueueFragment"
+        android:label="Nurse Queue"
+        tools:layout="@layout/fragment_nurse_queue" />
+
+    <fragment
+        android:id="@+id/nav_records"
+        android:name="com.example.mediqueue.ui.receptionist.NurseRecordsFragment"
+        android:label="Nurse Records"
+        tools:layout="@layout/fragment_nurse_records" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.mediqueue.ui.receptionist.NurseSettingsFragment"
+        android:label="Nurse Settings"
+        tools:layout="@layout/fragment_nurse_settings" />
+
+    <fragment
+        android:id="@+id/triageAssessmentFragment"
+        android:name="com.example.mediqueue.ui.receptionist.TriageAssessmentFragment"
+        android:label="Triage Assessment"
+        tools:layout="@layout/fragment_triage_assessment">
+        <argument
+            android:name="PATIENT_ID"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/patientMedicalHistoryFragment"
+        android:name="com.example.mediqueue.ui.receptionist.PatientMedicalHistoryFragment"
+        android:label="Medical Records"
+        tools:layout="@layout/fragment_patient_medical_history_nurse">
+        <argument
+            android:name="PATIENT_ID"
+            app:argType="string"
+            android:defaultValue="LSK-KNH-004582" />
+    </fragment>
+
+</navigation>

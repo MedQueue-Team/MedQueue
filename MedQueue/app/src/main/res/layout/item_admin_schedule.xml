@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/surface_container_lowest"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/tv_doctor_initials"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_card_surface"
+                android:gravity="center"
+                android:text="JP"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+                <TextView
+                    android:id="@+id/tv_doctor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. John Phiri"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/on_surface" />
+                <TextView
+                    android:id="@+id/tv_dept_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="General OPD"
+                    android:textSize="12sp"
+                    android:textColor="@color/on_secondary_container"
+                    android:background="@drawable/bg_tag_waiting"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/on_surface_variant" />
+                    <TextView
+                        android:id="@+id/tv_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mon, Wed, Fri"
+                        android:textSize="12sp"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginStart="4dp" />
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_schedule"
+                        android:layout_marginStart="8dp"
+                        app:tint="@color/on_surface_variant" />
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="08:00 - 16:00"
+                        android:textSize="12sp"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+            <Button
+                android:id="@+id/btn_edit_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Edit"
+                android:textSize="12sp"
+                android:textColor="@color/primary"
+                android:backgroundTint="@color/surface"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1dp"
+                app:cornerRadius="8dp" />
+            <ImageView
+                android:id="@+id/btn_delete_schedule"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_delete"
+                app:tint="@color/error"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

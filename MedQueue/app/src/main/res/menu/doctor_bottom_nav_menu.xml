@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_doctor_home"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_doctor_queue"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Queue" />
+    <item
+        android:id="@+id/nav_doctor_records"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="Records" />
+    <item
+        android:id="@+id/nav_doctor_appts"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="Appts" />
+    <item
+        android:id="@+id/nav_doctor_settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="Settings" />
+</menu>

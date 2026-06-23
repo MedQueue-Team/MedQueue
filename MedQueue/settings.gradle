@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        // Use explicit Google Maven URL for environments with older Gradle where google() isn't available
+        maven { url 'https://maven.google.com' }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        // Use explicit Google Maven URL for environments with older Gradle where google() isn't available
+        maven { url 'https://maven.google.com' }
+        mavenCentral()
+    }
+}
+
+rootProject.name = "MediQueue"
+include ':app'

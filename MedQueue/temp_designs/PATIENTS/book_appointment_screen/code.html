@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>MediQueue - Book Appointment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#a1c9ff",
+                        "tertiary": "#431c00",
+                        "secondary": "#556158",
+                        "on-surface": "#1a1c1f",
+                        "on-surface-variant": "#42474f",
+                        "surface-container-low": "#f3f3f8",
+                        "surface-variant": "#e2e2e7",
+                        "inverse-surface": "#2f3034",
+                        "surface-container-highest": "#e2e2e7",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9dade",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#14487a",
+                        "surface": "#f9f9fe",
+                        "on-error-container": "#93000a",
+                        "primary": "#00284b",
+                        "surface-container": "#ededf2",
+                        "tertiary-fixed-dim": "#ffb68a",
+                        "surface-container-high": "#e8e8ec",
+                        "secondary-container": "#d9e6da",
+                        "surface-bright": "#f9f9fe",
+                        "on-background": "#1a1c1f",
+                        "on-secondary-container": "#5b675e",
+                        "on-secondary": "#ffffff",
+                        "outline": "#727780",
+                        "on-tertiary-container": "#e59461",
+                        "on-secondary-fixed": "#131e17",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f0f5",
+                        "on-primary-container": "#7faae1",
+                        "inverse-primary": "#a1c9ff",
+                        "secondary-fixed": "#d9e6da",
+                        "on-tertiary-fixed-variant": "#71370a",
+                        "surface-tint": "#336093",
+                        "secondary-fixed-dim": "#bdcabf",
+                        "on-tertiary-fixed": "#321300",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#642d01",
+                        "tertiary-fixed": "#ffdbc8",
+                        "on-secondary-fixed-variant": "#3e4a41",
+                        "background": "#f9f9fe",
+                        "primary-fixed": "#d2e4ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001c38",
+                        "primary-container": "#003e6f",
+                        "outline-variant": "#c2c6d0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-tablet": "24px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .modal-active { display: flex !important; }
+        .chip-active { @apply bg-primary text-on-primary; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24 overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 bg-surface dark:bg-inverse-surface shadow-sm w-full h-16 flex items-center px-4 max-w-container-max mx-auto">
+<button class="p-2 mr-2 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-full active:scale-95 duration-150 ease-in-out" onclick="window.history.back()">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-sm-mobile text-headline-sm-mobile font-bold text-primary dark:text-primary-fixed-dim leading-none">Book Appointment</h1>
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant">Schedule your hospital visit</p>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 mt-6 space-y-6">
+<!-- Bento Grid Layout for Large Screens / Stacked for Mobile -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+<!-- Left Column: Form Section (8 Cols) -->
+<section class="md:col-span-7 space-y-6">
+<!-- Appointment Form Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-container">
+<h2 class="font-headline-sm text-headline-sm mb-6 text-primary">Appointment Details</h2>
+<form class="space-y-5" id="appointmentForm">
+<!-- Department -->
+<div>
+<label class="block font-label-lg text-label-lg mb-2 text-on-surface-variant">Department</label>
+<select class="w-full h-12 bg-surface-container-lowest border border-outline-variant rounded-lg px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all">
+<option>General OPD</option>
+<option>Dental</option>
+<option>Pediatrics</option>
+<option>Surgery</option>
+<option>Emergency</option>
+</select>
+</div>
+<!-- Doctor Dropdown (Mock Searchable) -->
+<div>
+<label class="block font-label-lg text-label-lg mb-2 text-on-surface-variant">Select Doctor</label>
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">search</span>
+<input class="w-full h-12 bg-surface-container-lowest border border-outline-variant rounded-lg pl-11 pr-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="Search for a doctor..." type="text" value="Dr. Sarah Jenkins"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-xs text-on-surface-variant font-label-md">Available Today</span>
+</div>
+</div>
+</div>
+<!-- Date Picker (Simplified Calendar View) -->
+<div>
+<label class="block font-label-lg text-label-lg mb-2 text-on-surface-variant">Select Date</label>
+<div class="grid grid-cols-4 gap-2">
+<button class="flex flex-col items-center justify-center p-3 rounded-xl border border-outline-variant hover:border-primary transition-all" type="button">
+<span class="font-label-sm text-label-sm uppercase opacity-60">Mon</span>
+<span class="font-headline-sm text-headline-sm">18</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl border-2 border-primary bg-primary-container text-on-primary-container transition-all" type="button">
+<span class="font-label-sm text-label-sm uppercase opacity-60">Tue</span>
+<span class="font-headline-sm text-headline-sm">19</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl border border-outline-variant hover:border-primary transition-all" type="button">
+<span class="font-label-sm text-label-sm uppercase opacity-60">Wed</span>
+<span class="font-headline-sm text-headline-sm">20</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl border border-outline-variant hover:border-primary transition-all" type="button">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-sm text-label-sm">More</span>
+</button>
+</div>
+</div>
+<!-- Time Picker -->
+<div>
+<label class="block font-label-lg text-label-lg mb-2 text-on-surface-variant">Select Time</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-outline-variant font-label-md hover:bg-primary-container transition-all" type="button">08:00</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant font-label-md hover:bg-primary-container transition-all" type="button">09:00</button>
+<button class="px-4 py-2 rounded-full bg-primary text-white font-label-md shadow-md" type="button">10:00</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant font-label-md hover:bg-primary-container transition-all" type="button">11:00</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant font-label-md hover:bg-primary-container transition-all" type="button">14:00</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant font-label-md hover:bg-primary-container transition-all" type="button">15:00</button>
+</div>
+</div>
+<!-- Reason for Visit -->
+<div>
+<label class="block font-label-lg text-label-lg mb-2 text-on-surface-variant">Reason for Visit</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none" placeholder="Describe your symptoms or reason for appointment" rows="4"></textarea>
+</div>
+<!-- Priority Level -->
+<div>
+<label class="block font-label-lg text-label-lg mb-2 text-on-surface-variant">Priority Level</label>
+<div class="flex gap-4">
+<label class="flex-1 cursor-pointer">
+<input checked="" class="hidden peer" name="priority" type="radio"/>
+<div class="flex items-center justify-center gap-2 h-12 border-2 border-outline-variant rounded-xl peer-checked:border-primary peer-checked:bg-primary-container peer-checked:text-primary transition-all">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-lg">Normal</span>
+</div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="hidden peer" name="priority" type="radio"/>
+<div class="flex items-center justify-center gap-2 h-12 border-2 border-outline-variant rounded-xl peer-checked:border-error peer-checked:bg-error-container peer-checked:text-error transition-all">
+<span class="material-symbols-outlined text-sm">priority_high</span>
+<span class="font-label-lg">Urgent</span>
+</div>
+</label>
+</div>
+</div>
+</form>
+</div>
+</section>
+<!-- Right Column: Previews & Summary (4 Cols) -->
+<aside class="md:col-span-5 space-y-6">
+<!-- Doctor Preview Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-container overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full uppercase font-bold tracking-wider">Top Rated</span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-primary-container" data-alt="A professional medical headshot of a female doctor in her 40s with a warm smile, wearing a white clinical coat and a stethoscope around her neck. The background is a clean, softly blurred hospital corridor with professional bright lighting. The aesthetic is clean, medical-grade, and trustworthy, perfectly fitting a high-end clinical application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYqZrEDURf9N7VB-3cP8BLzMXyIpOfsnxYPhnAa5Qxsq1dY2J6WtAX02frQ8NZehWcUhGTKQaETFsCyzs6NBWEoq3-mvERXKa0ThCZXbBlKQPJxfZd55xWYqiSsWK-LDrrMja9In8Ku3wfW0hP94MOFZFRvbdEZT1FkJ2c49qE9xPw-MPhlTpw44CdH02whSWLisTC9Hn9ct1Hmqzn9KIw-G7UZlWzWVqI_cXyaoAQ0LUqJashI8vY5SQlcEDiE-04GV0nIoHMx1Dp"/>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Dr. Sarah Jenkins</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Cardiology Specialist</p>
+</div>
+</div>
+<div class="space-y-3 pt-4 border-t border-surface-container">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-body-lg">domain</span>
+<span class="font-body-sm text-body-sm">Department: Heart Center</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-body-lg">schedule</span>
+<span class="font-body-sm text-body-sm">Mon-Fri, 08:00 - 17:00</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-body-lg">verified</span>
+<span class="font-body-sm text-body-sm">15+ Years Experience</span>
+</div>
+</div>
+</div>
+<!-- Summary Section -->
+<div class="bg-primary text-white rounded-xl p-6 shadow-lg space-y-4">
+<h3 class="font-label-lg text-label-lg border-b border-white/20 pb-2 uppercase tracking-widest opacity-80">Booking Summary</h3>
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="font-label-md opacity-70">Doctor</span>
+<span class="font-label-lg">Dr. Sarah Jenkins</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label-md opacity-70">Department</span>
+<span class="font-label-lg">Cardiology</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label-md opacity-70">Date</span>
+<span class="font-label-lg">Tuesday, Oct 19</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label-md opacity-70">Time</span>
+<span class="font-label-lg">10:00 AM</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label-md opacity-70">Type</span>
+<span class="font-label-lg">In-person Visit</span>
+</div>
+</div>
+</div>
+<!-- Primary Button -->
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-label-lg text-lg uppercase tracking-widest shadow-lg hover:bg-primary/90 transition-all active:scale-[0.98] duration-200" onclick="showSuccess()">
+                    BOOK APPOINTMENT
+                </button>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface-container dark:bg-inverse-surface shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-5 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-full px-5 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-label-sm text-label-sm">Booking</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-5 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+<span class="font-label-sm text-label-sm">Records</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-5 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Success Modal Overlay -->
+<div class="hidden fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm items-center justify-center p-6" id="successModal">
+<div class="bg-surface-container-lowest rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl scale-0 transition-transform duration-300" id="modalContent">
+<div class="p-8 text-center space-y-4">
+<div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">Appointment Booked!</h2>
+<p class="text-on-surface-variant font-body-sm">Your visit with Dr. Sarah Jenkins has been confirmed for Oct 19 at 10:00 AM. You will receive a notification 1 hour before.</p>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-label-lg mt-4" onclick="hideSuccess()">DONE</button>
+</div>
+<div class="h-1.5 w-full bg-green-500"></div>
+</div>
+</div>
+<script>
+        function showSuccess() {
+            const modal = document.getElementById('successModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.add('modal-active');
+            setTimeout(() => {
+                content.classList.remove('scale-0');
+                content.classList.add('scale-100');
+            }, 10);
+        }
+
+        function hideSuccess() {
+            const modal = document.getElementById('successModal');
+            const content = document.getElementById('modalContent');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-0');
+            setTimeout(() => {
+                modal.classList.remove('modal-active');
+            }, 300);
+        }
+
+        // Add visual micro-interaction to time chips
+        const timeChips = document.querySelectorAll('.flex.flex-wrap.gap-2 button');
+        timeChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                timeChips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-white', 'shadow-md');
+                    c.classList.add('border-outline-variant', 'border');
+                });
+                chip.classList.remove('border-outline-variant', 'border');
+                chip.classList.add('bg-primary', 'text-white', 'shadow-md');
+            });
+        });
+
+        // Add visual micro-interaction to date chips
+        const dateChips = document.querySelectorAll('.grid.grid-cols-4.gap-2 button');
+        dateChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                if(chip.querySelector('span').textContent !== 'More') {
+                    dateChips.forEach(c => {
+                        c.classList.remove('border-2', 'border-primary', 'bg-primary-container', 'text-on-primary-container');
+                        c.classList.add('border-outline-variant');
+                    });
+                    chip.classList.remove('border-outline-variant');
+                    chip.classList.add('border-2', 'border-primary', 'bg-primary-container', 'text-on-primary-container');
+                }
+            });
+        });
+    </script>
+</body></html>

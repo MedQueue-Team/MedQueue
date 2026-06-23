@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">MediQueue</string>
+    <string name="splash_tagline">SMART HEALTHCARE FLOW MANAGEMENT</string>
+    <string name="offline_ready">OFFLINE-FIRST SYNC READY</string>
+    <string name="footer_text">Built for Modern African Healthcare Systems</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Healthcare Provider Login</string>
+    <string name="login_subtitle">Enter your credentials to access the facility dashboard.</string>
+    <string name="label_phone_email">PHONE OR EMAIL ADDRESS</string>
+    <string name="placeholder_phone_email">name@clinic.gov or +254...</string>
+    <string name="label_password">SECURITY PASSWORD</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="remember_device">Remember this device for 30 days</string>
+    <string name="btn_login_dashboard">Login to Dashboard</string>
+    <string name="secure_login">Secure login active</string>
+    <string name="region_text">Region: St. Mary\'s Health Cluster</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="request_access">Request access from Administrator</string>
+    <string name="system_status">System Status: All clinical nodes online</string>
+
+    <!-- Patient Dashboard -->
+    <string name="welcome_back">Welcome back, %1$s</string>
+    <string name="patient_id">ID: %1$s</string>
+    <string name="health_update">Your health dashboard is up to date.</string>
+    <string name="active_queue_status">ACTIVE QUEUE STATUS</string>
+    <string name="queue_position">You are #%1$d in line</string>
+    <string name="estimated_wait">Estimated wait time</string>
+    <string name="wait_time_mins">%1$d mins</string>
+    <string name="live_tracking">Live Tracking Active</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="join_queue">Join Queue</string>
+    <string name="join_queue_desc">Check-in at a clinic now</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="book_appointment_desc">Schedule a future visit</string>
+    <string name="clinics">Clinics</string>
+    <string name="clinics_desc">Find healthcare facilities</string>
+    <string name="recent_history">Recent History</string>
+    <string name="view_all">View All</string>
+    <string name="sync_status">All clinical data is synced and available offline.</string>
+    
+    <!-- Bottom Nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_clinics">Clinics</string>
+    <string name="nav_register">Register</string>
+    <string name="nav_appts">Appts</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Registration Screen -->
+    <string name="new_patient_reg">New Patient Registration</string>
+    <string name="id_auto_gen">ID will be auto-generated</string>
+    <string name="identity_info">IDENTITY INFORMATION</string>
+    <string name="location_kin_info">LOCATION &amp; NEXT OF KIN</string>
+    
+    <string name="label_full_name">Full Name</string>
+    <string name="hint_full_name">John Doe</string>
+    <string name="label_nrc">NRC / National ID</string>
+    <string name="hint_nrc">000000/00/1</string>
+    <string name="label_dob">Date of Birth</string>
+    <string name="hint_dob">mm/dd/yyyy</string>
+    <string name="label_gender">Gender</string>
+    <string name="hint_gender">Select Gender</string>
+    <string name="label_phone_number">Phone Number</string>
+    <string name="hint_phone_number">+260 9xx xxxxxx</string>
+    
+    <string name="label_nok_name">Next of Kin Name</string>
+    <string name="hint_nok_name">Full name of contact</string>
+    <string name="label_relationship">Relationship to Patient</string>
+    <string name="hint_relationship">Select Relationship</string>
+    <string name="label_nok_phone">Next of Kin Phone Number</string>
+    
+    <string name="reg_footer_info">Data will be encrypted and synced automatically.</string>
+    <string name="btn_register_patient">Register Patient</string>
+
+    <!-- Join Queue Screen -->
+    <string name="join_queue_title">Join Queue</string>
+    <string name="offline_connected">You are connected to St. Mary\'s real-time queue.</string>
+    <string name="clinic_info_title">Clinic Information</string>
+    <string name="clinic_name_st_marys">St. Mary\'s Clinic</string>
+    <string name="clinic_location">Central Medical Wing, Block C</string>
+    <string name="wait_time_15m">15 min wait</string>
+    <string name="patients_ahead_4">4 patients ahead</string>
+    <string name="clinical_concerns_title">Clinical Concerns</string>
+    <string name="required_label">Required</string>
+    <string name="symptoms_label">Symptoms or Reason for Visit</string>
+    <string name="symptoms_hint">Please describe your symptoms briefly...</string>
+    <string name="duration_label">Duration of Symptoms</string>
+    <string name="duration_less_24h">Less than 24h</string>
+    <string name="duration_1_3_days">1-3 days</string>
+    <string name="duration_4_7_days">4-7 days</string>
+    <string name="duration_1_week">1 week+</string>
+    <string name="additional_info_title">Additional Info</string>
+    <string name="known_allergies_hint">Known allergies or medications</string>
+    <string name="optional_notes_hint">Optional notes for the nurse</string>
+    <string name="btn_join_queue_get_ticket">Join Queue &amp; Get Ticket</string>
+    <string name="join_queue_disclaimer">By joining, you agree to our digital triage and data privacy protocols.</string>
+</resources>

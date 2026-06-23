@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg"
+    tools:context=".ui.splash.SplashActivity">
+
+    <!-- Background Decorative Elements are already in splash_bg.xml -->
+
+    <!-- Central Content Area -->
+    <LinearLayout
+        android:id="@+id/centralContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/footerArea"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <!-- Logo Container with Glow -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp">
+
+            <!-- Background Glow -->
+            <View
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_gravity="center"
+                android:background="@drawable/logo_circle"
+                android:alpha="0.1" />
+
+            <!-- Main Logo Circle -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="@color/surface_container_lowest"
+                app:cardCornerRadius="80dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/outline_variant">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="32dp"
+                    android:src="@drawable/ic_medical_shield" />
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        <!-- Branding Text -->
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/primary"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:letterSpacing="-0.02" />
+
+        <TextView
+            android:id="@+id/tvTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/splash_tagline"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
+
+        <!-- Animated Heartbeat Visual -->
+        <ImageView
+            android:id="@+id/ivHeartbeat"
+            android:layout_width="280dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/ic_heartbeat"
+            android:alpha="0.6" />
+
+        <!-- Operational Status Indicator -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/status_chip_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_cloud_done" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/offline_ready"
+                android:textColor="@color/on_secondary_container"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Footer Area -->
+    <LinearLayout
+        android:id="@+id/footerArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="180dp"
+            android:layout_height="6dp"
+            android:layout_marginBottom="24dp"
+            android:progress="65"
+            android:progressDrawable="@drawable/custom_progress_bar" />
+
+        <TextView
+            android:id="@+id/tvFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/footer_text"
+            android:textColor="@color/outline"
+            android:textSize="12sp"
+            android:letterSpacing="0.05" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:elevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/primary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Book Appointment"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Schedule your hospital visit"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="12sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintTop_toBottomOf="@id/btnBack" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Appointment Details Form Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/surface_container_lowest"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Appointment Details"
+                        android:textColor="@color/primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Department Selection -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Department"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDepartment"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_spinner"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Select Doctor -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Doctor"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp" />
+
+                    <EditText
+                        android:id="@+id/etDoctorSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_input"
+                        android:drawableStart="@drawable/ic_search"
+                        android:drawablePadding="8dp"
+                        android:hint="Search for a doctor..."
+                        android:text="Dr. Sarah Jenkins"
+                        android:textSize="14sp"
+                        android:padding="12dp"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Select Date -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Date"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:id="@+id/btnDateMon"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="4dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:background="@drawable/date_inactive_bg"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MON" android:textSize="10sp" android:textColor="@color/on_surface_variant"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="18" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/primary"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btnDateTue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="2dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:background="@drawable/date_active_bg"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TUE" android:textSize="10sp" android:textColor="@color/on_primary_fixed"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="19" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/on_primary_fixed"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btnDateWed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="2dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:background="@drawable/date_inactive_bg"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="WED" android:textSize="10sp" android:textColor="@color/on_surface_variant"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/primary"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btnDateMore"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="4dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:background="@drawable/date_inactive_bg"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_calendar_month" app:tint="@color/primary"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="More" android:textSize="10sp" android:textColor="@color/primary"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Select Time -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Time"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="3"
+                        android:layout_marginBottom="16dp">
+                        <!-- Time Slot Chips -->
+                        <Button android:id="@+id/chipTime1" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="08:00 AM" android:layout_margin="4dp" app:cornerRadius="20dp" android:textSize="11sp"/>
+                        <Button android:id="@+id/chipTime2" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="09:00 AM" android:layout_margin="4dp" app:cornerRadius="20dp" android:textSize="11sp"/>
+                        <Button android:id="@+id/chipTime3" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10:00 AM" android:textColor="@color/white" android:backgroundTint="@color/primary" android:layout_margin="4dp" app:cornerRadius="20dp" android:textSize="11sp"/>
+                        <Button android:id="@+id/chipTime4" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11:00 AM" android:layout_margin="4dp" app:cornerRadius="20dp" android:textSize="11sp"/>
+                        <Button android:id="@+id/chipTime5" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="02:00 PM" android:layout_margin="4dp" app:cornerRadius="20dp" android:textSize="11sp"/>
+                        <Button android:id="@+id/chipTime6" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="03:00 PM" android:layout_margin="4dp" app:cornerRadius="20dp" android:textSize="11sp"/>
+                    </GridLayout>
+
+                    <!-- Reason for Visit -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reason for Visit"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp" />
+
+                    <EditText
+                        android:id="@+id/etReason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input"
+                        android:hint="Describe your symptoms or reason for appointment"
+                        android:gravity="top"
+                        android:minLines="3"
+                        android:textSize="14sp"
+                        android:padding="12dp"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Priority Level -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Priority Level"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <Button
+                            android:id="@+id/btnPriorityNormal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="4dp"
+                            android:text="Normal"
+                            android:backgroundTint="@color/primary_fixed"
+                            android:textColor="@color/on_primary_fixed"
+                            app:icon="@drawable/ic_check_circle"
+                            app:iconTint="@color/on_primary_fixed"
+                            app:cornerRadius="12dp" />
+
+                        <Button
+                            android:id="@+id/btnPriorityUrgent"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="4dp"
+                            android:text="Urgent"
+                            android:textColor="@color/error"
+                            app:strokeColor="@color/outline_variant"
+                            app:icon="@drawable/ic_priority_high"
+                            app:iconTint="@color/error"
+                            app:cornerRadius="12dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Doctor Preview Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/surface_container_lowest"
+                android:layout_marginBottom="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivDocPreviewPhoto"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/CircleImage"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDocPreviewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Sarah Jenkins"
+                        android:textColor="@color/primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintStart_toEndOf="@id/ivDocPreviewPhoto"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDocPreviewSpecialty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cardiology Specialist • Heart Center"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="12sp"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintStart_toEndOf="@id/ivDocPreviewPhoto"
+                        app:layout_constraintTop_toBottomOf="@id/tvDocPreviewName" />
+
+                    <TextView
+                        android:id="@+id/tvDocPreviewExp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15+ Years Experience • Mon-Fri, 08:00 - 17:00"
+                        android:textColor="@color/on_primary_fixed_variant"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintStart_toEndOf="@id/ivDocPreviewPhoto"
+                        app:layout_constraintTop_toBottomOf="@id/tvDocPreviewSpecialty" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOP RATED"
+                        android:textColor="@color/on_secondary_container"
+                        android:background="@drawable/bg_rounded_pill_status"
+                        android:textSize="8sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Booking Summary -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/primary"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BOOKING SUMMARY"
+                        android:textColor="@color/on_primary_container"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="4dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Doctor" android:textColor="@color/on_primary_container" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvSumDoctor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dr. Sarah Jenkins" android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold" android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="4dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Department" android:textColor="@color/on_primary_container" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvSumDept" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cardiology" android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold" android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="4dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Date" android:textColor="@color/on_primary_container" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvSumDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tuesday, Oct 19" android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold" android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="4dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Time" android:textColor="@color/on_primary_container" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvSumTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10:00 AM" android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold" android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Type" android:textColor="@color/on_primary_container" android:textSize="13sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="In-person Visit" android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold" android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Book Button -->
+            <Button
+                android:id="@+id/btnSubmitBooking"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="BOOK APPOINTMENT"
+                android:backgroundTint="@color/primary"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                app:cornerRadius="16dp"
+                android:layout_marginBottom="40dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Success Modal Overlay -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSuccessModal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        android:elevation="100dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="16dp"
+            app:cardBackgroundColor="@color/surface_container_lowest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="28dp">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:src="@drawable/ic_check_circle"
+                    app:tint="@color/on_secondary_container"
+                    android:background="@drawable/bg_rounded_pill_status"
+                    android:padding="8dp"
+                    android:layout_marginBottom="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Appointment Booked!"
+                    android:textColor="@color/primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvSuccessDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your visit with Dr. Sarah Jenkins has been confirmed for Oct 19 at 10:00 AM. You will receive a notification 1 hour before."
+                    android:textColor="@color/on_surface_variant"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.2"
+                    android:layout_marginBottom="24dp" />
+
+                <Button
+                    android:id="@+id/btnSuccessDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="DONE"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="@color/white"
+                    app:cornerRadius="12dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

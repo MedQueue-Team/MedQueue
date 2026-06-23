@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "error-container": "#ffdad6",
+                  "surface-container-lowest": "#ffffff",
+                  "surface-bright": "#f9f9ff",
+                  "surface": "#f9f9ff",
+                  "on-secondary-fixed": "#0b1c30",
+                  "surface-container-low": "#f2f3fc",
+                  "on-surface": "#191c21",
+                  "inverse-primary": "#acc7ff",
+                  "outline-variant": "#c2c6d4",
+                  "on-tertiary-container": "#ffc2a7",
+                  "primary-container": "#0056b3",
+                  "secondary-container": "#d0e1fb",
+                  "tertiary-fixed": "#ffdbcc",
+                  "on-primary": "#ffffff",
+                  "surface-container-highest": "#e1e2ea",
+                  "on-error-container": "#93000a",
+                  "inverse-surface": "#2e3037",
+                  "on-tertiary-fixed": "#351000",
+                  "secondary-fixed": "#d3e4fe",
+                  "primary-fixed": "#d7e2ff",
+                  "surface-dim": "#d9d9e2",
+                  "tertiary-container": "#983c00",
+                  "on-primary-fixed-variant": "#004491",
+                  "on-primary-container": "#bbd0ff",
+                  "background": "#f9f9ff",
+                  "tertiary-fixed-dim": "#ffb694",
+                  "on-background": "#191c21",
+                  "error": "#ba1a1a",
+                  "primary-fixed-dim": "#acc7ff",
+                  "on-secondary-fixed-variant": "#38485d",
+                  "on-tertiary-fixed-variant": "#7b2f00",
+                  "on-tertiary": "#ffffff",
+                  "on-secondary-container": "#54647a",
+                  "on-secondary": "#ffffff",
+                  "inverse-on-surface": "#f0f0f9",
+                  "outline": "#727784",
+                  "on-surface-variant": "#424752",
+                  "surface-tint": "#115cb9",
+                  "surface-container-high": "#e7e8f0",
+                  "on-error": "#ffffff",
+                  "surface-variant": "#e1e2ea",
+                  "surface-container": "#ededf6",
+                  "tertiary": "#722b00",
+                  "secondary": "#505f76",
+                  "on-primary-fixed": "#001a40",
+                  "primary": "#003f87",
+                  "secondary-fixed-dim": "#b7c8e1"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "base": "8px",
+                  "xs": "4px",
+                  "md": "16px",
+                  "xl": "40px",
+                  "lg": "24px",
+                  "sm": "8px",
+                  "container-max": "1280px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "label-lg": ["Inter"],
+                  "label-md": ["Inter"],
+                  "headline-lg-mobile": ["Inter"],
+                  "headline-md": ["Inter"],
+                  "body-md": ["Inter"],
+                  "headline-lg": ["Inter"],
+                  "display-lg": ["Inter"],
+                  "body-lg": ["Inter"]
+          },
+          "fontSize": {
+                  "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                  "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: max(884px, 100dvh);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center justify-between px-lg h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center">
+<h1 class="text-xl font-bold tracking-tight text-primary">MediQueue</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-primary">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-lg py-lg pb-32">
+<!-- Search and Filter Section -->
+<div class="mb-lg space-y-md"><div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<div class="flex gap-4 items-start">
+<div class="flex-none w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="text-primary font-bold text-lg">A-12</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-md font-semibold text-on-surface truncate">Elena Rodriguez</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-error/10 text-error border border-error/20">Emergency</span>
+</div>
+<p class="text-xs text-outline mb-3">General Medicine</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+<span class="text-xs font-medium text-on-surface-variant">Waiting (08m)</span>
+</div>
+<button class="px-4 py-1.5 bg-primary text-on-primary rounded-lg text-xs font-semibold hover:bg-primary/90 transition-colors">Call Patient</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<div class="flex gap-4 items-start">
+<div class="flex-none w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="text-primary font-bold text-lg">B-08</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-md font-semibold text-on-surface truncate">Marcus Chen</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-tertiary/10 text-tertiary border border-tertiary/20">High Risk</span>
+</div>
+<p class="text-xs text-outline mb-3">Cardiology</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+<span class="text-xs font-medium text-on-surface-variant">Waiting (24m)</span>
+</div>
+<button class="px-4 py-1.5 bg-primary text-on-primary rounded-lg text-xs font-semibold hover:bg-primary/90 transition-colors">Call Patient</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<div class="flex gap-4 items-start">
+<div class="flex-none w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="text-primary font-bold text-lg">C-21</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-md font-semibold text-on-surface truncate">Sarah Jenkins</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-secondary/10 text-secondary border border-secondary/20">Routine</span>
+</div>
+<p class="text-xs text-outline mb-3">Post-Op Care</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+<span class="text-xs font-medium text-on-surface-variant">In Progress</span>
+</div>
+<button class="px-4 py-1.5 border border-primary text-primary rounded-lg text-xs font-semibold hover:bg-primary/5 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+</div></div>
+<!-- Patients List -->
+<div class="space-y-md"><div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<div class="flex gap-4 items-start">
+<div class="flex-none w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="text-primary font-bold text-lg">A-12</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-md font-semibold text-on-surface truncate">Elena Rodriguez</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-error/10 text-error border border-error/20">Emergency</span>
+</div>
+<p class="text-xs text-outline mb-3">General Medicine</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+<span class="text-xs font-medium text-on-surface-variant">Waiting (08m)</span>
+</div>
+<button class="px-4 py-1.5 bg-primary text-on-primary rounded-lg text-xs font-semibold hover:bg-primary/90 transition-colors">Call Patient</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<div class="flex gap-4 items-start">
+<div class="flex-none w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="text-primary font-bold text-lg">B-08</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-md font-semibold text-on-surface truncate">Marcus Chen</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-tertiary/10 text-tertiary border border-tertiary/20">High Risk</span>
+</div>
+<p class="text-xs text-outline mb-3">Cardiology</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+<span class="text-xs font-medium text-on-surface-variant">Waiting (24m)</span>
+</div>
+<button class="px-4 py-1.5 bg-primary text-on-primary rounded-lg text-xs font-semibold hover:bg-primary/90 transition-colors">Call Patient</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<div class="flex gap-4 items-start">
+<div class="flex-none w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="text-primary font-bold text-lg">C-21</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-md font-semibold text-on-surface truncate">Sarah Jenkins</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-secondary/10 text-secondary border border-secondary/20">Routine</span>
+</div>
+<p class="text-xs text-outline mb-3">Post-Op Care</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+<span class="text-xs font-medium text-on-surface-variant">In Progress</span>
+</div>
+<button class="px-4 py-1.5 border border-primary text-primary rounded-lg text-xs font-semibold hover:bg-primary/5 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+</div></div>
+<!-- Queue Insights Widget -->
+<div class="mt-xl bg-primary text-white rounded-2xl p-lg shadow-lg">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="text-lg font-bold">Queue Insights</h2>
+<span class="material-symbols-outlined opacity-60">analytics</span>
+</div>
+<div class="grid grid-cols-3 gap-md">
+<div class="text-center">
+<p class="text-[11px] uppercase tracking-widest text-white/60 mb-1">Active</p>
+<p class="text-2xl font-bold">12</p>
+</div>
+<div class="text-center border-x border-white/10">
+<p class="text-[11px] uppercase tracking-widest text-white/60 mb-1">Avg Wait</p>
+<p class="text-2xl font-bold">32<span class="text-sm font-normal ml-0.5 text-white/70">m</span></p>
+</div>
+<div class="text-center">
+<p class="text-[11px] uppercase tracking-widest text-white/60 mb-1">Success</p>
+<p class="text-2xl font-bold">98<span class="text-sm font-normal ml-0.5 text-white/70">%</span></p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-white border-t border-outline-variant px-base">
+<div class="flex justify-between items-center h-16 w-full max-w-container-max mx-auto px-lg">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60 cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary cursor-pointer">
+<span class="material-symbols-outlined font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[10px] font-bold">Patients</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60 cursor-pointer">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[10px] font-medium">Records</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60 cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</div>
+</div>
+</nav>
+</body></html>

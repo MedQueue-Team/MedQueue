@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- General Medicine -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:orientation="vertical">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="General Medicine" android:textColor="#191C21" android:textSize="14sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="412 patients" android:textColor="#727784" android:textSize="12sp" />
+        </RelativeLayout>
+        <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:max="100" android:progress="82" android:progressTint="#003F87" android:progressBackgroundTint="#E6E6EF" />
+    </LinearLayout>
+
+    <!-- Emergency -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:orientation="vertical">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Emergency" android:textColor="#191C21" android:textSize="14sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="287 patients" android:textColor="#727784" android:textSize="12sp" />
+        </RelativeLayout>
+        <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:max="100" android:progress="57" android:progressTint="#B3261E" android:progressBackgroundTint="#E6E6EF" />
+    </LinearLayout>
+
+    <!-- Pediatrics -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:orientation="vertical">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pediatrics" android:textColor="#191C21" android:textSize="14sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="198 patients" android:textColor="#727784" android:textSize="12sp" />
+        </RelativeLayout>
+        <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:max="100" android:progress="40" android:progressTint="#00833F" android:progressBackgroundTint="#E6E6EF" />
+    </LinearLayout>
+
+    <!-- Obstetrics -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Obstetrics &amp; Gynecology" android:textColor="#191C21" android:textSize="14sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="156 patients" android:textColor="#727784" android:textSize="12sp" />
+        </RelativeLayout>
+        <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:max="100" android:progress="31" android:progressTint="#7C5800" android:progressBackgroundTint="#E6E6EF" />
+    </LinearLayout>
+
+</LinearLayout>

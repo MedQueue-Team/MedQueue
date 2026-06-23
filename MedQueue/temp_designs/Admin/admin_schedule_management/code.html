@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schedule Management | MediQueue</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#e8e8ec",
+                      "on-surface-variant": "#42474f",
+                      "on-surface": "#1a1c1f",
+                      "inverse-primary": "#a1c9ff",
+                      "surface-container-highest": "#e2e2e7",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#ffb68a",
+                      "tertiary-container": "#642d01",
+                      "outline": "#727780",
+                      "on-secondary-fixed": "#131e17",
+                      "tertiary-fixed": "#ffdbc8",
+                      "surface": "#f9f9fe",
+                      "surface-dim": "#d9dade",
+                      "surface-container": "#ededf2",
+                      "background": "#f9f9fe",
+                      "tertiary": "#431c00",
+                      "surface-bright": "#f9f9fe",
+                      "on-secondary-fixed-variant": "#3e4a41",
+                      "secondary": "#556158",
+                      "primary": "#00284b",
+                      "surface-variant": "#e2e2e7",
+                      "primary-fixed": "#d2e4ff",
+                      "primary-fixed-dim": "#a1c9ff",
+                      "secondary-fixed": "#d9e6da",
+                      "surface-container-low": "#f3f3f8",
+                      "on-secondary-container": "#5b675e",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#c2c6d0",
+                      "secondary-container": "#d9e6da",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#003e6f",
+                      "on-primary-container": "#7faae1",
+                      "on-tertiary-fixed": "#321300",
+                      "on-primary-fixed": "#001c38",
+                      "inverse-surface": "#2f3034",
+                      "on-primary-fixed-variant": "#14487a",
+                      "surface-tint": "#336093",
+                      "on-tertiary-fixed-variant": "#71370a",
+                      "inverse-on-surface": "#f0f0f5",
+                      "on-background": "#1a1c1f",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#bdcabf",
+                      "on-tertiary-container": "#e59461",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-desktop": "40px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "container-max": "1440px",
+                      "margin-tablet": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Manrope"],
+                      "headline-lg": ["Manrope"],
+                      "body-sm": ["Inter"],
+                      "headline-lg-mobile": ["Manrope"],
+                      "label-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "display-lg": ["Manrope"],
+                      "headline-sm": ["Manrope"],
+                      "body-md": ["Inter"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-sm": ["11px", {"lineHeight": "1.2", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .chip-active {
+            background-color: #00284b;
+            color: #ffffff;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-20 md:pb-0">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface shadow-sm h-16 flex justify-between items-center px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Schedule Management</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col items-end mr-2">
+<span class="font-label-lg text-on-surface">Dr. Sarah Chen</span>
+<span class="text-[11px] text-on-surface-variant uppercase tracking-wider">Clinical Director</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border-2 border-surface shadow-sm">
+<img alt="Admin Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKtTtC5zyeoc52OimTVIKciorWfGLvhepe8CbcI-P01v1pgWM9C6QL5opt774wjgtbzQOSdUPlQmVFNcUSw-TWFNJuIHd2a0a93-OQ8IX02df1FG5KoWwI2fWqdTNRr0HxSDDkwb44aBxdr-7rdJhRpXbKEYnoxt_Hz2YQ-W9tK1ppcyD5FeOmcgnFH92Y4am8OfDI5_DkHoOLVp88iJ-0vN0xjB-hnn0eaY9L6RQSQemolUFN-yn8-U4CFBMJWZlaTclRrBDr0im"/>
+</div>
+</div>
+</header>
+<!-- Sidebar for Desktop -->
+<aside class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-64px)] w-72 flex-col bg-surface border-r border-outline-variant p-unit-gutter">
+<nav class="space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-lg">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 bg-secondary-container text-on-secondary-container font-semibold rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-lg">Schedules</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-lg">Staff</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-lg">Inventory</span>
+</a>
+<div class="pt-4 mt-4 border-t border-outline-variant">
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-lg">Settings</span>
+</a>
+</div>
+</nav>
+<div class="mt-auto p-4 bg-surface-container-low rounded-xl">
+<p class="text-label-sm text-on-surface-variant font-semibold mb-2">WEST WING OPS</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="text-label-md">System Active</span>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="pt-24 px-margin-mobile md:px-margin-desktop md:ml-72 pb-12 max-w-container-max mx-auto">
+<!-- Filter Bar -->
+<section class="mb-gutter flex flex-col md:flex-row gap-4 items-center">
+<div class="w-full md:w-1/2 group">
+<label class="block text-label-sm font-semibold text-on-surface-variant mb-1 ml-1">Select Doctor</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary-container focus:outline-none text-body-md transition-shadow">
+<option>All Doctors</option>
+<option>Dr. John Phiri</option>
+<option>Dr. Amina Juma</option>
+<option>Dr. Robert Smith</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 group">
+<label class="block text-label-sm font-semibold text-on-surface-variant mb-1 ml-1">Select Department</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary-container focus:outline-none text-body-md transition-shadow">
+<option>All Departments</option>
+<option>General OPD</option>
+<option>Pediatrics</option>
+<option>Cardiology</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Create Schedule Card (Asymmetric Bento Element) -->
+<section class="lg:col-span-5 bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] p-gutter border border-surface-container-high overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">edit_calendar</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                    Create Schedule
+                </h2>
+<div class="space-y-6">
+<div>
+<label class="block text-label-md font-semibold text-on-surface mb-3">Operating Days</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-md transition-all active:scale-95 bg-surface-container hover:border-primary" onclick="this.classList.toggle('chip-active'); this.classList.toggle('bg-surface-container');">Mon</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-md transition-all active:scale-95 bg-surface-container hover:border-primary" onclick="this.classList.toggle('chip-active'); this.classList.toggle('bg-surface-container');">Tue</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-md transition-all active:scale-95 bg-surface-container hover:border-primary" onclick="this.classList.toggle('chip-active'); this.classList.toggle('bg-surface-container');">Wed</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-md transition-all active:scale-95 bg-surface-container hover:border-primary" onclick="this.classList.toggle('chip-active'); this.classList.toggle('bg-surface-container');">Thu</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-md transition-all active:scale-95 bg-surface-container hover:border-primary" onclick="this.classList.toggle('chip-active'); this.classList.toggle('bg-surface-container');">Fri</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-md transition-all active:scale-95 bg-surface-container hover:border-primary" onclick="this.classList.toggle('chip-active'); this.classList.toggle('bg-surface-container');">Sat</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-md transition-all active:scale-95 bg-surface-container hover:border-primary" onclick="this.classList.toggle('chip-active'); this.classList.toggle('bg-surface-container');">Sun</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-semibold text-on-surface mb-2">Start Time</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container border border-outline-variant rounded-lg px-3 py-2 text-label-md focus:ring-2 focus:ring-primary-container focus:outline-none">
+<option>08:00</option>
+<option>09:00</option>
+<option>10:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">schedule</span>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-semibold text-on-surface mb-2">End Time</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container border border-outline-variant rounded-lg px-3 py-2 text-label-md focus:ring-2 focus:ring-primary-container focus:outline-none">
+<option>16:00</option>
+<option>17:00</option>
+<option>18:00</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">history</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-lg hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md active:scale-[0.98] mt-4">
+                        Create Schedule
+                    </button>
+</div>
+</section>
+<!-- Existing Schedules (Bento Grid Main Content) -->
+<section class="lg:col-span-7 space-y-4">
+<div class="flex justify-between items-center mb-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">Active Rotations</h2>
+<span class="text-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded-full">4 Schedules Total</span>
+</div>
+<div class="grid grid-cols-1 gap-4 overflow-y-auto max-h-[600px] pr-2 hide-scrollbar">
+<!-- Schedule Card 1 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-surface-container-high shadow-sm hover:shadow-md transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary font-bold">JP</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dr. John Phiri</h3>
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-semibold mb-2">General OPD</span>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="text-label-md">Mon, Wed, Fri</span>
+</div>
+<div class="flex items-center gap-1 border-l border-outline-variant pl-3">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-label-md">08:00 - 16:00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col gap-2 items-end justify-end">
+<button class="px-4 py-2 text-primary border border-primary rounded-lg text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors w-full md:w-auto">Edit</button>
+<button class="p-2 text-error hover:bg-error-container transition-colors rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Schedule Card 2 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-surface-container-high shadow-sm hover:shadow-md transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary font-bold">AJ</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dr. Amina Juma</h3>
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-semibold mb-2">Pediatrics</span>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="text-label-md">Tue, Thu, Sat</span>
+</div>
+<div class="flex items-center gap-1 border-l border-outline-variant pl-3">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-label-md">09:00 - 15:00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col gap-2 items-end justify-end">
+<button class="px-4 py-2 text-primary border border-primary rounded-lg text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors w-full md:w-auto">Edit</button>
+<button class="p-2 text-error hover:bg-error-container transition-colors rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Schedule Card 3 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-surface-container-high shadow-sm hover:shadow-md transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-on-primary-fixed font-bold">RS</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dr. Robert Smith</h3>
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-semibold mb-2">Cardiology</span>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="text-label-md">Mon - Fri</span>
+</div>
+<div class="flex items-center gap-1 border-l border-outline-variant pl-3">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-label-md">08:00 - 12:00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col gap-2 items-end justify-end">
+<button class="px-4 py-2 text-primary border border-primary rounded-lg text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors w-full md:w-auto">Edit</button>
+<button class="p-2 text-error hover:bg-error-container transition-colors rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface shadow-[0_-4px_12px_rgba(0,0,0,0.05)] border-t border-outline-variant flex justify-around items-center z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[11px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event</span>
+<span class="text-[11px] font-semibold">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[11px] font-medium">Staff</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">more_horiz</span>
+<span class="text-[11px] font-medium">More</span>
+</a>
+</nav>
+<!-- Optional Visual Flourish -->
+<div class="fixed top-20 right-[-100px] w-[300px] h-[300px] bg-primary-fixed opacity-10 rounded-full blur-[100px] -z-10"></div>
+<div class="fixed bottom-10 left-[-50px] w-[200px] h-[200px] bg-secondary-fixed opacity-10 rounded-full blur-[80px] -z-10"></div>
+<script>
+        // Simple Interaction: Ripple Effect on Buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                setTimeout(() => { ripple.remove() }, 600);
+            });
+        });
+    </script>
+</body></html>

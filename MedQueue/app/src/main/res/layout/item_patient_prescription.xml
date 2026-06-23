@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_medication"
+                    android:background="@drawable/bg_card_surface"
+                    android:padding="8dp"
+                    app:tint="@color/primary" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+                    <TextView
+                        android:id="@+id/tv_med_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amoxicillin 500mg"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary" />
+                    <TextView
+                        android:id="@+id/tv_med_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7 days course"
+                        android:textSize="12sp"
+                        android:textColor="@color/on_surface_variant" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:id="@+id/view_status_indicator"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/holo_green_light" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/surface_container_low"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dosage"
+                    android:textSize="10sp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/outline" />
+                <TextView
+                    android:id="@+id/tv_dosage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="500mg"
+                    android:textSize="13sp"
+                    android:textColor="@color/on_surface" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Frequency"
+                    android:textSize="10sp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/outline" />
+                <TextView
+                    android:id="@+id/tv_frequency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3x daily"
+                    android:textSize="13sp"
+                    android:textColor="@color/on_surface" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_person"
+                app:tint="@color/on_surface_variant" />
+            <TextView
+                android:id="@+id/tv_med_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Elena Rodriguez"
+                android:textSize="12sp"
+                android:textColor="@color/on_surface_variant"
+                android:layout_marginStart="4dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/btn_download_pdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:textSize="12sp"
+                android:backgroundTint="@color/surface_container_high"
+                android:textColor="@color/primary"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

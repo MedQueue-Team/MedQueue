@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9FF"
+    android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Reports &amp; Analytics"
+        app:titleTextColor="#003F87" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Date Range Selector -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupDateRange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipThisWeek"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="This Week" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipThisMonth"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This Month" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCustom"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Custom" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- KPI Cards Grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#C2C6D4"
+                    app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_person" app:tint="#003F87" />
+                        <TextView android:id="@+id/tvTotalPatients" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="1,247" android:textColor="#191C21" android:textSize="22sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Patients Served" android:textColor="#727784" android:textSize="11sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="↑ +8.2%" android:textColor="#00833F" android:textSize="11sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#C2C6D4"
+                    app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_timer" app:tint="#003F87" />
+                        <TextView android:id="@+id/tvAvgWaitTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="18 min" android:textColor="#191C21" android:textSize="22sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Avg Wait Time" android:textColor="#727784" android:textSize="11sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="↓ -12% vs last" android:textColor="#00833F" android:textSize="11sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#C2C6D4"
+                    app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_favorite" app:tint="#003F87" />
+                        <TextView android:id="@+id/tvSatisfaction" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="92%" android:textColor="#191C21" android:textSize="22sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Satisfaction" android:textColor="#727784" android:textSize="11sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="★ 4.6/5.0" android:textColor="#003F87" android:textSize="11sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#C2C6D4"
+                    app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_query_stats" app:tint="#003F87" />
+                        <TextView android:id="@+id/tvStaffUtil" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="87%" android:textColor="#191C21" android:textSize="22sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Staff Utilization" android:textColor="#727784" android:textSize="11sp" />
+                        <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="4dp" android:layout_marginTop="6dp" android:progress="87" android:progressTint="#003F87" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Department Performance -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Department Performance"
+                android:textColor="#191C21"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#C2C6D4"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <include layout="@layout/item_department_bar" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Peak Hours Chart -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Peak Hours"
+                android:textColor="#191C21"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#C2C6D4"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+                        <View android:layout_width="0dp" android:layout_height="30dp" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:background="#D0E1FB" />
+                        <View android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:background="#D0E1FB" />
+                        <View android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:background="#003F87" />
+                        <View android:layout_width="0dp" android:layout_height="95dp" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:background="#003F87" />
+                        <View android:layout_width="0dp" android:layout_height="70dp" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:background="#003F87" />
+                        <View android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:background="#D0E1FB" />
+                        <View android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:background="#D0E1FB" />
+                        <View android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:background="#D0E1FB" />
+                        <View android:layout_width="0dp" android:layout_height="25dp" android:layout_weight="1" android:layout_marginHorizontal="2dp" android:background="#D0E1FB" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="8am" android:textSize="9sp" android:gravity="center" android:textColor="#727784" />
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="9" android:textSize="9sp" android:gravity="center" android:textColor="#727784" />
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="10" android:textSize="9sp" android:gravity="center" android:textColor="#727784" />
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="11" android:textSize="9sp" android:gravity="center" android:textColor="#727784" />
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="12" android:textSize="9sp" android:gravity="center" android:textColor="#727784" />
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="1pm" android:textSize="9sp" android:gravity="center" android:textColor="#727784" />
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="2" android:textSize="9sp" android:gravity="center" android:textColor="#727784" />
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="3" android:textSize="9sp" android:gravity="center" android:textColor="#727784" />
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="4pm" android:textSize="9sp" android:gravity="center" android:textColor="#727784" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Export Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExport"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Export Report (PDF / CSV)"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="#003F87"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_download"
+                app:iconGravity="textStart"
+                app:iconTint="#FFFFFF" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

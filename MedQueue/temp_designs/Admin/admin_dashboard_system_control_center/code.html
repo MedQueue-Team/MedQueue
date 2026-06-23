@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>MediQueue - System Control Center</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Inter & Manrope -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <!-- Material Symbols Outlined -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#ffb68a",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#14487a",
+                    "on-secondary-fixed": "#131e17",
+                    "on-tertiary-container": "#e59461",
+                    "surface-container-low": "#f3f3f8",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2f3034",
+                    "on-primary-fixed": "#001c38",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f0f0f5",
+                    "error-container": "#ffdad6",
+                    "primary": "#00284b",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#3e4a41",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c2c6d0",
+                    "secondary-fixed": "#d9e6da",
+                    "secondary": "#556158",
+                    "surface": "#f9f9fe",
+                    "primary-container": "#003e6f",
+                    "surface-dim": "#d9dade",
+                    "on-tertiary-fixed": "#321300",
+                    "surface-bright": "#f9f9fe",
+                    "tertiary-container": "#642d01",
+                    "surface-variant": "#e2e2e7",
+                    "surface-container-highest": "#e2e2e7",
+                    "inverse-primary": "#a1c9ff",
+                    "on-secondary-container": "#5b675e",
+                    "on-primary-container": "#7faae1",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1a1c1f",
+                    "primary-fixed-dim": "#a1c9ff",
+                    "on-tertiary-fixed-variant": "#71370a",
+                    "secondary-container": "#d9e6da",
+                    "primary-fixed": "#d2e4ff",
+                    "tertiary": "#431c00",
+                    "on-surface": "#1a1c1f",
+                    "outline": "#727780",
+                    "background": "#f9f9fe",
+                    "surface-container-high": "#e8e8ec",
+                    "surface-container": "#ededf2",
+                    "tertiary-fixed": "#ffdbc8",
+                    "surface-tint": "#336093",
+                    "on-surface-variant": "#42474f",
+                    "secondary-fixed-dim": "#bdcabf"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-tablet": "24px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "label-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-lg": ["Manrope"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Manrope"],
+                    "display-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        body {
+            background-color: #f8f9ff;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .custom-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .level-1-shadow {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .log-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .log-container::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.02);
+        }
+        .log-container::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+        }
+        /* Custom toggle styling */
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #00284b;
+        }
+        .toggle-checkbox:checked + .toggle-label .toggle-dot {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-on-surface bg-surface-container-low">
+
+    <!-- Top App Bar -->
+    <header class="bg-surface sticky top-0 z-40 flex justify-between items-center w-full px-margin-mobile h-16 shadow-sm border-b border-outline-variant/30">
+        <div class="flex items-center gap-4">
+            <button class="cursor-pointer active:scale-95 transition-transform" onclick="window.history.back()">
+                <span class="material-symbols-outlined text-primary text-2xl">arrow_back</span>
+            </button>
+            <div>
+                <h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary flex items-center gap-2">
+                    System Control Center
+                </h1>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-xs font-semibold">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span>SYSTEM ONLINE</span>
+            </div>
+            <button class="cursor-pointer active:scale-95 transition-all text-primary p-2 hover:bg-surface-container rounded-full" id="refresh-btn">
+                <span class="material-symbols-outlined">refresh</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Global Alert Banner (Hidden by default, shown when Emergency Mode active) -->
+    <div id="emergency-banner" class="hidden bg-error-container text-on-error-container px-6 py-4 flex items-center justify-between border-b border-error/20 animate-bounce-short">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-error text-2xl animate-pulse">warning</span>
+            <div>
+                <p class="font-bold text-sm">EMERGENCY QUEUE PAUSE ACTIVE</p>
+                <p class="text-xs opacity-90">All automatic and manual patient check-ins are temporarily suspended system-wide.</p>
+            </div>
+        </div>
+        <button onclick="toggleEmergency(false)" class="bg-error text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-red-700 transition-colors">
+            RESUME ALL
+        </button>
+    </div>
+
+    <!-- Active Broadcasts Banner Section -->
+    <div id="broadcasts-section" class="hidden bg-tertiary-fixed text-tertiary-container px-6 py-3 border-b border-tertiary-fixed-dim/30 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-sm">
+            <span class="material-symbols-outlined animate-pulse text-tertiary">campaign</span>
+            <span class="font-bold">Broadcast Alert:</span>
+            <span id="broadcast-message-text">All departments are currently running on standard schedule.</span>
+        </div>
+        <button onclick="clearBroadcast()" class="text-tertiary hover:opacity-75">
+            <span class="material-symbols-outlined text-sm">close</span>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <main class="flex-1 max-w-container-max mx-auto w-full px-margin-mobile py-6 space-y-6 pb-24">
+
+        <!-- Grid 1: Health Cards & Quick Toggles -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- Real-Time Metrics -->
+            <div class="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Card: Active Queues -->
+                <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 level-1-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Active Queue</span>
+                            <span class="material-symbols-outlined text-primary text-xl">groups</span>
+                        </div>
+                        <h3 class="font-headline-lg text-2xl font-bold text-primary" id="metric-active-queue">48</h3>
+                    </div>
+                    <p class="text-xs text-green-600 flex items-center gap-1 mt-2">
+                        <span class="material-symbols-outlined text-xs">arrow_upward</span> +8% vs yesterday
+                    </p>
+                </div>
+
+                <!-- Card: Avg Wait Time -->
+                <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 level-1-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Avg Wait</span>
+                            <span class="material-symbols-outlined text-primary text-xl">schedule</span>
+                        </div>
+                        <h3 class="font-headline-lg text-2xl font-bold text-primary" id="metric-wait-time">18<span class="text-sm font-normal"> min</span></h3>
+                    </div>
+                    <p class="text-xs text-red-600 flex items-center gap-1 mt-2">
+                        <span class="material-symbols-outlined text-xs">arrow_upward</span> +3m peak load
+                    </p>
+                </div>
+
+                <!-- Card: Active Clinics -->
+                <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 level-1-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Clinics Open</span>
+                            <span class="material-symbols-outlined text-primary text-xl">local_hospital</span>
+                        </div>
+                        <h3 class="font-headline-lg text-2xl font-bold text-primary" id="metric-clinics">5 / 6</h3>
+                    </div>
+                    <p class="text-xs text-on-surface-variant flex items-center gap-1 mt-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Dermatology active
+                    </p>
+                </div>
+
+                <!-- Card: Server Health -->
+                <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 level-1-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">DB Latency</span>
+                            <span class="material-symbols-outlined text-primary text-xl">dns</span>
+                        </div>
+                        <h3 class="font-headline-lg text-2xl font-bold text-primary" id="metric-latency">12<span class="text-sm font-normal"> ms</span></h3>
+                    </div>
+                    <p class="text-xs text-green-600 flex items-center gap-1 mt-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></span> Healthy (CPU 24%)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Server Status & Load indicators -->
+            <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 level-1-shadow flex flex-col justify-between">
+                <div class="space-y-4 w-full">
+                    <h3 class="font-headline-sm text-sm font-bold text-primary flex items-center justify-between">
+                        <span>SYSTEM LOAD INDICATORS</span>
+                        <span class="text-xs font-normal text-on-surface-variant">Live Feed</span>
+                    </h3>
+                    
+                    <!-- Server CPU -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-on-surface-variant">Server CPU Load</span>
+                            <span id="cpu-load-val">24%</span>
+                        </div>
+                        <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                            <div id="cpu-load-bar" class="bg-primary h-full transition-all duration-1000" style="width: 24%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Server Memory -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-on-surface-variant">Memory Allocation</span>
+                            <span id="memory-load-val">4.2 GB / 8 GB</span>
+                        </div>
+                        <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                            <div id="memory-load-bar" class="bg-primary-container h-full transition-all duration-1000" style="width: 52.5%"></div>
+                        </div>
+                    </div>
+
+                    <!-- API Success Rate -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-on-surface-variant">API Success Rate</span>
+                            <span>99.98%</span>
+                        </div>
+                        <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                            <div class="bg-secondary-fixed-dim h-full" style="width: 99.98%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid 2: Main System Controls & Active Broadcaster -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- System Controls Panel -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 level-1-shadow md:col-span-2 space-y-6">
+                <div class="border-b border-outline-variant/30 pb-4">
+                    <h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">settings_applications</span>
+                        System Controls & Safety Switches
+                    </h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Change system modes and emergency settings. Modifications affect all active client terminals instantly.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Control 1: Emergency Pause Toggle -->
+                    <div class="p-4 rounded-xl border border-outline-variant/40 hover:border-error-container hover:bg-error-container/5 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold text-primary flex items-center gap-2 text-sm">
+                                    <span class="material-symbols-outlined text-error">pause_circle</span>
+                                    Emergency Queue Pause
+                                </h3>
+                                <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                    <input type="checkbox" id="toggle-emergency" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-outline-variant appearance-none cursor-pointer transition-transform duration-200 ease-in-out outline-none" onclick="confirmEmergencyToggle(this)"/>
+                                    <label for="toggle-emergency" class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-high cursor-pointer transition-colors duration-200"></label>
+                                </div>
+                            </div>
+                            <p class="text-xs text-on-surface-variant">Instantly freeze all patients check-ins and queue movements across all physical clinics.</p>
+                        </div>
+                    </div>
+
+                    <!-- Control 2: System Maintenance Mode -->
+                    <div class="p-4 rounded-xl border border-outline-variant/40 hover:border-primary-container hover:bg-primary-container/5 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold text-primary flex items-center gap-2 text-sm">
+                                    <span class="material-symbols-outlined text-primary">construction</span>
+                                    Maintenance Mode
+                                </h3>
+                                <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                    <input type="checkbox" id="toggle-maintenance" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-outline-variant appearance-none cursor-pointer transition-transform duration-200 ease-in-out outline-none" onclick="confirmMaintenanceToggle(this)"/>
+                                    <label for="toggle-maintenance" class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-high cursor-pointer transition-colors duration-200"></label>
+                                </div>
+                            </div>
+                            <p class="text-xs text-on-surface-variant">Restrict write operations, redirect mobile patients to a placeholder page for server upgrades.</p>
+                        </div>
+                    </div>
+
+                    <!-- Control 3: Auto-admit Queues -->
+                    <div class="p-4 rounded-xl border border-outline-variant/40 hover:border-primary-container hover:bg-primary-container/5 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold text-primary flex items-center gap-2 text-sm">
+                                    <span class="material-symbols-outlined text-primary">robot_2</span>
+                                    Auto-Call Patient (AI Mode)
+                                </h3>
+                                <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                    <input type="checkbox" id="toggle-autocall" checked class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-outline-variant appearance-none cursor-pointer transition-transform duration-200 ease-in-out outline-none" onclick="toggleAutoCall(this)"/>
+                                    <label for="toggle-autocall" class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-high cursor-pointer transition-colors duration-200"></label>
+                                </div>
+                            </div>
+                            <p class="text-xs text-on-surface-variant">When active, the system auto-selects and calls the next patient if doctor finishes current appointment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Control 4: Global Services Panel (Backup DB) -->
+                    <div class="p-4 rounded-xl border border-outline-variant/40 flex flex-col justify-between space-y-2">
+                        <div>
+                            <h3 class="font-semibold text-primary flex items-center gap-2 text-sm">
+                                <span class="material-symbols-outlined text-primary">database</span>
+                                Database Operations
+                            </h3>
+                            <p class="text-xs text-on-surface-variant">Take a full snapshot of the current active database schema and queue configurations.</p>
+                        </div>
+                        <button id="btn-backup" onclick="triggerBackup()" class="w-full flex items-center justify-center gap-2 bg-primary text-white py-2 rounded-lg text-xs font-bold active:scale-95 transition-all">
+                            <span class="material-symbols-outlined text-sm" id="backup-icon">backup</span>
+                            <span id="backup-text">Run System Backup</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Broadcast System Alerts -->
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 level-1-shadow space-y-4 flex flex-col justify-between">
+                <div class="space-y-2">
+                    <h2 class="font-headline-md text-sm font-bold text-primary flex items-center gap-2 border-b border-outline-variant/30 pb-2">
+                        <span class="material-symbols-outlined text-primary">campaign</span>
+                        Broadcast System Alert
+                    </h2>
+                    <p class="font-body-sm text-xs text-on-surface-variant">Dispatch messages to all waiting room screens and user mobile applications instantly.</p>
+                </div>
+
+                <div class="space-y-3 my-4">
+                    <textarea id="broadcast-input" rows="3" class="w-full p-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-sm text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all resize-none" placeholder="e.g. Cardiology clinic is running 15 minutes late today due to unexpected emergencies..."></textarea>
+                    
+                    <div class="flex gap-2 overflow-x-auto custom-scrollbar">
+                        <button onclick="setTemplate('Cardiology clinic is running 15 mins late.')" class="flex-shrink-0 px-3 py-1 bg-surface-container text-xs rounded-full hover:bg-surface-variant text-on-surface-variant font-semibold">Clinic Delay</button>
+                        <button onclick="setTemplate('All queues will reset in 10 minutes.')" class="flex-shrink-0 px-3 py-1 bg-surface-container text-xs rounded-full hover:bg-surface-variant text-on-surface-variant font-semibold">Scheduled Reset</button>
+                        <button onclick="setTemplate('Severe weather alert. Drive safe!')" class="flex-shrink-0 px-3 py-1 bg-surface-container text-xs rounded-full hover:bg-surface-variant text-on-surface-variant font-semibold">Weather Alert</button>
+                    </div>
+                </div>
+
+                <button onclick="publishBroadcast()" class="w-full flex items-center justify-center gap-2 bg-primary text-white py-2.5 rounded-lg text-xs font-bold active:scale-95 hover:bg-primary-container transition-all">
+                    <span class="material-symbols-outlined text-sm">send</span>
+                    Dispatch Broadcast Alert
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 3: Department / Clinic Queues Control -->
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 level-1-shadow space-y-4">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-outline-variant/30 pb-4">
+                <div>
+                    <h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">local_hospital</span>
+                        Clinic Department Queue Monitors
+                    </h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Oversee queue length, call next patients, or temporarily suspend department activities.</p>
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <span class="material-symbols-outlined text-outline">search</span>
+                    <input id="clinic-search" oninput="filterClinics()" class="w-full sm:w-64 px-3 py-1.5 bg-surface-container border border-outline-variant rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-primary/20" placeholder="Search departments..."/>
+                </div>
+            </div>
+
+            <!-- Desktop & Tablet Table (Hidden on small screen, flex otherwise) -->
+            <div class="overflow-x-auto custom-scrollbar hidden md:block">
+                <table class="w-full text-left text-sm border-collapse">
+                    <thead>
+                        <tr class="border-b border-outline-variant text-on-surface-variant font-semibold text-xs uppercase bg-surface-container/30">
+                            <th class="py-3 px-4">Department / Clinic</th>
+                            <th class="py-3 px-4">Doctor In Charge</th>
+                            <th class="py-3 px-4 text-center">In Queue</th>
+                            <th class="py-3 px-4 text-center">Serving Token</th>
+                            <th class="py-3 px-4 text-center">Next In Line</th>
+                            <th class="py-3 px-4">Status</th>
+                            <th class="py-3 px-4 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clinic-table-body" class="divide-y divide-outline-variant/20 font-medium">
+                        <!-- General OPD -->
+                        <tr class="hover:bg-surface-container-low transition-colors" data-clinic="General OPD">
+                            <td class="py-4 px-4 font-bold text-primary">General OPD</td>
+                            <td class="py-4 px-4">Dr. Phiri</td>
+                            <td class="py-4 px-4 text-center text-primary font-bold" id="q-count-opd">18</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="bg-primary-fixed text-on-primary-fixed-variant px-2.5 py-1 rounded-md font-mono" id="serving-opd">A-024</span>
+                            </td>
+                            <td class="py-4 px-4 text-center text-on-surface-variant font-mono" id="next-opd">A-025</td>
+                            <td class="py-4 px-4">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant flex items-center gap-1 w-fit" id="status-badge-opd">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> ACTIVE
+                                </span>
+                            </td>
+                            <td class="py-4 px-4 text-right space-x-1">
+                                <button onclick="callNext('opd')" class="px-3 py-1 bg-primary text-white rounded-lg text-xs font-semibold hover:bg-primary-container active:scale-95 transition-all">Call Next</button>
+                                <button onclick="toggleClinic('opd')" class="px-3 py-1 border border-outline text-on-surface-variant rounded-lg text-xs font-semibold hover:bg-surface-container active:scale-95 transition-all" id="btn-toggle-opd">Pause</button>
+                            </td>
+                        </tr>
+                        <!-- Cardiology -->
+                        <tr class="hover:bg-surface-container-low transition-colors" data-clinic="Cardiology">
+                            <td class="py-4 px-4 font-bold text-primary">Cardiology</td>
+                            <td class="py-4 px-4">Dr. Lungu</td>
+                            <td class="py-4 px-4 text-center text-primary font-bold" id="q-count-cardio">6</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="bg-primary-fixed text-on-primary-fixed-variant px-2.5 py-1 rounded-md font-mono" id="serving-cardio">C-104</span>
+                            </td>
+                            <td class="py-4 px-4 text-center text-on-surface-variant font-mono" id="next-cardio">C-105</td>
+                            <td class="py-4 px-4">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant flex items-center gap-1 w-fit" id="status-badge-cardio">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> ACTIVE
+                                </span>
+                            </td>
+                            <td class="py-4 px-4 text-right space-x-1">
+                                <button onclick="callNext('cardio')" class="px-3 py-1 bg-primary text-white rounded-lg text-xs font-semibold hover:bg-primary-container active:scale-95 transition-all">Call Next</button>
+                                <button onclick="toggleClinic('cardio')" class="px-3 py-1 border border-outline text-on-surface-variant rounded-lg text-xs font-semibold hover:bg-surface-container active:scale-95 transition-all" id="btn-toggle-cardio">Pause</button>
+                            </td>
+                        </tr>
+                        <!-- Pediatrics -->
+                        <tr class="hover:bg-surface-container-low transition-colors" data-clinic="Pediatrics">
+                            <td class="py-4 px-4 font-bold text-primary">Pediatrics</td>
+                            <td class="py-4 px-4">Dr. Banda</td>
+                            <td class="py-4 px-4 text-center text-primary font-bold" id="q-count-peds">12</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="bg-primary-fixed text-on-primary-fixed-variant px-2.5 py-1 rounded-md font-mono" id="serving-peds">P-055</span>
+                            </td>
+                            <td class="py-4 px-4 text-center text-on-surface-variant font-mono" id="next-peds">P-056</td>
+                            <td class="py-4 px-4">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant flex items-center gap-1 w-fit" id="status-badge-peds">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> ACTIVE
+                                </span>
+                            </td>
+                            <td class="py-4 px-4 text-right space-x-1">
+                                <button onclick="callNext('peds')" class="px-3 py-1 bg-primary text-white rounded-lg text-xs font-semibold hover:bg-primary-container active:scale-95 transition-all">Call Next</button>
+                                <button onclick="toggleClinic('peds')" class="px-3 py-1 border border-outline text-on-surface-variant rounded-lg text-xs font-semibold hover:bg-surface-container active:scale-95 transition-all" id="btn-toggle-peds">Pause</button>
+                            </td>
+                        </tr>
+                        <!-- Dermatology -->
+                        <tr class="hover:bg-surface-container-low transition-colors" data-clinic="Dermatology">
+                            <td class="py-4 px-4 font-bold text-primary">Dermatology</td>
+                            <td class="py-4 px-4">Dr. Kapuya</td>
+                            <td class="py-4 px-4 text-center text-primary font-bold" id="q-count-derm">4</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="bg-primary-fixed text-on-primary-fixed-variant px-2.5 py-1 rounded-md font-mono" id="serving-derm">D-012</span>
+                            </td>
+                            <td class="py-4 px-4 text-center text-on-surface-variant font-mono" id="next-derm">D-013</td>
+                            <td class="py-4 px-4">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant flex items-center gap-1 w-fit" id="status-badge-derm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> ACTIVE
+                                </span>
+                            </td>
+                            <td class="py-4 px-4 text-right space-x-1">
+                                <button onclick="callNext('derm')" class="px-3 py-1 bg-primary text-white rounded-lg text-xs font-semibold hover:bg-primary-container active:scale-95 transition-all">Call Next</button>
+                                <button onclick="toggleClinic('derm')" class="px-3 py-1 border border-outline text-on-surface-variant rounded-lg text-xs font-semibold hover:bg-surface-container active:scale-95 transition-all" id="btn-toggle-derm">Pause</button>
+                            </td>
+                        </tr>
+                        <!-- Orthopedics -->
+                        <tr class="hover:bg-surface-container-low transition-colors opacity-60" data-clinic="Orthopedics">
+                            <td class="py-4 px-4 font-bold text-primary">Orthopedics</td>
+                            <td class="py-4 px-4">Dr. Chisamba</td>
+                            <td class="py-4 px-4 text-center text-primary font-bold" id="q-count-ortho">0</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="bg-surface-container-high text-on-surface-variant px-2.5 py-1 rounded-md font-mono" id="serving-ortho">--</span>
+                            </td>
+                            <td class="py-4 px-4 text-center text-on-surface-variant font-mono" id="next-ortho">--</td>
+                            <td class="py-4 px-4">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-error-container text-on-error-container flex items-center gap-1 w-fit" id="status-badge-ortho">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-error"></span> CLOSED
+                                </span>
+                            </td>
+                            <td class="py-4 px-4 text-right space-x-1">
+                                <button onclick="callNext('ortho')" disabled class="px-3 py-1 bg-primary/40 text-white rounded-lg text-xs font-semibold cursor-not-allowed">Call Next</button>
+                                <button onclick="toggleClinic('ortho')" class="px-3 py-1 border border-primary text-primary rounded-lg text-xs font-semibold hover:bg-primary/5 active:scale-95 transition-all animate-pulse" id="btn-toggle-ortho">Open</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Clinic Lists (Flex on small screens, hidden otherwise) -->
+            <div id="clinic-mobile-list" class="space-y-4 md:hidden">
+                <!-- Mobile card details will be dynamic or updated in script -->
+                <!-- Mobile OPD -->
+                <div class="bg-surface border border-outline-variant/30 rounded-xl p-4 space-y-3" data-mobile-clinic="General OPD">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-primary">General OPD</h4>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-secondary-container text-on-secondary-fixed-variant" id="mob-status-opd">ACTIVE</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 border-y border-outline-variant/20 py-2 text-xs">
+                        <div>
+                            <p class="text-on-surface-variant text-[10px]">IN QUEUE</p>
+                            <p class="font-bold text-primary text-sm" id="mob-q-opd">18</p>
+                        </div>
+                        <div>
+                            <p class="text-on-surface-variant text-[10px]">CURRENT</p>
+                            <p class="font-bold font-mono" id="mob-serving-opd">A-024</p>
+                        </div>
+                        <div>
+                            <p class="text-on-surface-variant text-[10px]">NEXT</p>
+                            <p class="font-mono text-on-surface-variant" id="mob-next-opd">A-025</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="callNext('opd')" class="flex-1 py-2 bg-primary text-white rounded-lg text-xs font-bold hover:bg-primary-container active:scale-95 transition-all">Call Next</button>
+                        <button onclick="toggleClinic('opd')" id="mob-btn-toggle-opd" class="flex-1 py-2 border border-outline text-on-surface-variant rounded-lg text-xs font-bold hover:bg-surface-container active:scale-95 transition-all">Pause</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Cardiology -->
+                <div class="bg-surface border border-outline-variant/30 rounded-xl p-4 space-y-3" data-mobile-clinic="Cardiology">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-primary">Cardiology</h4>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-secondary-container text-on-secondary-fixed-variant" id="mob-status-cardio">ACTIVE</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 border-y border-outline-variant/20 py-2 text-xs">
+                        <div>
+                            <p class="text-on-surface-variant text-[10px]">IN QUEUE</p>
+                            <p class="font-bold text-primary text-sm" id="mob-q-cardio">6</p>
+                        </div>
+                        <div>
+                            <p class="text-on-surface-variant text-[10px]">CURRENT</p>
+                            <p class="font-bold font-mono" id="mob-serving-cardio">C-104</p>
+                        </div>
+                        <div>
+                            <p class="text-on-surface-variant text-[10px]">NEXT</p>
+                            <p class="font-mono text-on-surface-variant" id="mob-next-cardio">C-105</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="callNext('cardio')" class="flex-1 py-2 bg-primary text-white rounded-lg text-xs font-bold hover:bg-primary-container active:scale-95 transition-all">Call Next</button>
+                        <button onclick="toggleClinic('cardio')" id="mob-btn-toggle-cardio" class="flex-1 py-2 border border-outline text-on-surface-variant rounded-lg text-xs font-bold hover:bg-surface-container active:scale-95 transition-all">Pause</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Pediatrics -->
+                <div class="bg-surface border border-outline-variant/30 rounded-xl p-4 space-y-3" data-mobile-clinic="Pediatrics">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-primary">Pediatrics</h4>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-secondary-container text-on-secondary-fixed-variant" id="mob-status-peds">ACTIVE</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 border-y border-outline-variant/20 py-2 text-xs">
+                        <div>
+                            <p class="text-on-surface-variant text-[10px]">IN QUEUE</p>
+                            <p class="font-bold text-primary text-sm" id="mob-q-peds">12</p>
+                        </div>
+                        <div>
+                            <p class="text-on-surface-variant text-[10px]">CURRENT</p>
+                            <p class="font-bold font-mono" id="mob-serving-peds">P-055</p>
+                        </div>
+                        <div>
+                            <p class="text-on-surface-variant text-[10px]">NEXT</p>
+                            <p class="font-mono text-on-surface-variant" id="mob-next-peds">P-056</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="callNext('peds')" class="flex-1 py-2 bg-primary text-white rounded-lg text-xs font-bold hover:bg-primary-container active:scale-95 transition-all">Call Next</button>
+                        <button onclick="toggleClinic('peds')" id="mob-btn-toggle-peds" class="flex-1 py-2 border border-outline text-on-surface-variant rounded-lg text-xs font-bold hover:bg-surface-container active:scale-95 transition-all">Pause</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Live Activity Logs & Terminal Logs -->
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 level-1-shadow space-y-4">
+            <div class="flex justify-between items-center border-b border-outline-variant/30 pb-3">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">terminal</span>
+                    <h2 class="font-headline-md text-headline-md text-primary">
+                        Real-Time System & Audit Logs
+                    </h2>
+                </div>
+                <button onclick="clearLogs()" class="flex items-center gap-1 px-3 py-1.5 bg-surface-container hover:bg-surface-variant text-on-surface-variant text-xs font-semibold rounded-lg transition-all">
+                    <span class="material-symbols-outlined text-sm">delete_sweep</span>
+                    Clear Console
+                </button>
+            </div>
+
+            <!-- Terminal Window -->
+            <div class="bg-slate-900 text-slate-200 p-4 rounded-lg font-mono text-xs space-y-2 h-64 overflow-y-auto log-container flex flex-col-reverse" id="log-console">
+                <!-- Logs are prepended so the newest is at the bottom, or standard scroll. Using standard flex-col-reverse to auto-scroll with latest first. -->
+                <div class="text-slate-500 italic flex justify-between items-center border-t border-slate-800 pt-2 mt-4">
+                    <span>Console ready... Listening to Mediqueue dispatch services</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                </div>
+                <div class="text-yellow-400">[19:48:59] WARNING: Heartbeat latency for clinic "Orthopedics" timed out. Auto-suspending queue.</div>
+                <div class="text-green-400">[19:46:31] INFO: Security protocol synchronized successfully with Admin Panel.</div>
+                <div class="text-slate-300">[19:46:28] SYSTEM: Application boot completed. Active database nodes: 3.</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-margin-mobile bg-surface shadow-lg md:hidden border-t border-outline-variant/30">
+        <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform" href="#">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-label-sm text-label-sm mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform" href="#">
+            <span class="material-symbols-outlined">event_note</span>
+            <span class="font-label-sm text-label-sm mt-1">Schedule</span>
+        </a>
+        <!-- ACTIVE TAB: Control Center -->
+        <a class="flex flex-col items-center justify-center bg-primary text-white rounded-xl px-4 py-1.5 active:scale-90 transition-transform" href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings_applications</span>
+            <span class="font-label-sm text-label-sm mt-0.5">Control</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform" href="#">
+            <span class="material-symbols-outlined">account_circle</span>
+            <span class="font-label-sm text-label-sm mt-1">Profile</span>
+        </a>
+    </nav>
+
+    <!-- CONFIRMATION MODALS -->
+
+    <!-- Emergency Modal -->
+    <div id="modal-emergency" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-surface-container-lowest max-w-md w-full rounded-2xl border border-outline-variant level-1-shadow p-6 space-y-4 animate-scale-up">
+            <div class="flex items-center gap-3 text-error">
+                <span class="material-symbols-outlined text-3xl">warning</span>
+                <h3 class="font-headline-sm font-bold">Confirm Safety Lockout?</h3>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+                You are about to activate the <strong class="text-error">Emergency Queue Pause</strong>. This will freeze all queue activities across all clinics and display a warning banner on all customer check-in systems. 
+            </p>
+            <div class="flex gap-3 justify-end pt-2">
+                <button onclick="cancelEmergency()" class="px-4 py-2 border border-outline rounded-lg text-xs font-bold text-on-surface-variant hover:bg-surface-container transition-all">Cancel</button>
+                <button onclick="executeEmergency()" class="px-4 py-2 bg-error text-white rounded-lg text-xs font-bold hover:bg-red-700 transition-all">Activate Lockout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Maintenance Mode Modal -->
+    <div id="modal-maintenance" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-surface-container-lowest max-w-md w-full rounded-2xl border border-outline-variant level-1-shadow p-6 space-y-4 animate-scale-up">
+            <div class="flex items-center gap-3 text-primary">
+                <span class="material-symbols-outlined text-3xl">construction</span>
+                <h3 class="font-headline-sm font-bold">Confirm Maintenance Mode?</h3>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+                Activating <strong class="text-primary">Maintenance Mode</strong> will shift user portals to read-only mode and halt appointment creation. All active sessions will stay logged in, but transactional databases will be locked.
+            </p>
+            <div class="flex gap-3 justify-end pt-2">
+                <button onclick="cancelMaintenance()" class="px-4 py-2 border border-outline rounded-lg text-xs font-bold text-on-surface-variant hover:bg-surface-container transition-all">Cancel</button>
+                <button onclick="executeMaintenance()" class="px-4 py-2 bg-primary text-white rounded-lg text-xs font-bold hover:bg-primary-container transition-all">Enable Mode</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Dialog -->
+    <div id="toast" class="fixed top-4 right-4 z-50 hidden transform translate-y-[-100px] opacity-0 transition-all duration-300">
+        <div class="bg-primary text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 border border-primary-container">
+            <span class="material-symbols-outlined text-lg" id="toast-icon">info</span>
+            <p class="text-xs font-bold" id="toast-message">Notification details</p>
+        </div>
+    </div>
+
+    <!-- AUDIO NOTIFICATION (Simulated sound check using JS Synthesizer) -->
+    <script>
+        // Synthesizer beep to simulate calling sound
+        function playBeep(type) {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (!audioCtx) return;
+                
+                if (type === 'call') {
+                    // Call sound: dual-tone elegant chime
+                    const osc1 = audioCtx.createOscillator();
+                    const osc2 = audioCtx.createOscillator();
+                    const gainNode = audioCtx.createGain();
+                    
+                    osc1.type = 'sine';
+                    osc1.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+                    osc1.frequency.exponentialRampToValueAtTime(659.25, audioCtx.currentTime + 0.35); // E5
+                    
+                    osc2.type = 'sine';
+                    osc2.frequency.setValueAtTime(783.99, audioCtx.currentTime); // G5
+                    osc2.frequency.exponentialRampToValueAtTime(1046.50, audioCtx.currentTime + 0.35); // C6
+                    
+                    gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                    
+                    osc1.connect(gainNode);
+                    osc2.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+                    
+                    osc1.start();
+                    osc2.start();
+                    osc1.stop(audioCtx.currentTime + 0.4);
+                    osc2.stop(audioCtx.currentTime + 0.4);
+                } else if (type === 'alert') {
+                    // Alert sound
+                    const osc = audioCtx.createOscillator();
+                    const gainNode = audioCtx.createGain();
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+                    osc.frequency.setValueAtTime(180, audioCtx.currentTime + 0.15);
+                    gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                    osc.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.3);
+                }
+            } catch(e) {
+                console.log("Audio not supported or permission denied", e);
+            }
+        }
+    </script>
+
+    <!-- CORE INTERACTION SCRIPT -->
+    <script>
+        // Data Structures for state tracking
+        const clinicQueues = {
+            opd: { name: 'General OPD', prefix: 'A', current: 24, maxQueue: 18, status: 'active' },
+            cardio: { name: 'Cardiology', prefix: 'C', current: 104, maxQueue: 6, status: 'active' },
+            peds: { name: 'Pediatrics', prefix: 'P', current: 55, maxQueue: 12, status: 'active' },
+            derm: { name: 'Dermatology', prefix: 'D', current: 12, maxQueue: 4, status: 'active' },
+            ortho: { name: 'Orthopedics', prefix: 'O', current: 0, maxQueue: 0, status: 'closed' }
+        };
+
+        let emergencyMode = false;
+        let maintenanceMode = false;
+        let autoCallEnabled = true;
+
+        // Custom micro-animations
+        const refreshBtn = document.getElementById('refresh-btn');
+        refreshBtn.addEventListener('click', () => {
+            const icon = refreshBtn.querySelector('span');
+            icon.classList.add('animate-spin');
+            addLog("INFO", "Manual refresh triggered. Syncing system registers...");
+            
+            // Randomize metric spikes slightly for fidelity
+            setTimeout(() => {
+                icon.classList.remove('animate-spin');
+                showToast("System metrics synchronized!", "info");
+                
+                // Randomize Server Stats
+                document.getElementById('metric-latency').innerHTML = (10 + Math.floor(Math.random() * 5)) + '<span class="text-sm font-normal"> ms</span>';
+                const cpuVal = 18 + Math.floor(Math.random() * 15);
+                document.getElementById('cpu-load-val').innerText = cpuVal + '%';
+                document.getElementById('cpu-load-bar').style.width = cpuVal + '%';
+            }, 800);
+        });
+
+        // Toast implementation
+        function showToast(message, iconName = 'info') {
+            const toast = document.getElementById('toast');
+            const toastIcon = document.getElementById('toast-icon');
+            const toastMsg = document.getElementById('toast-message');
+
+            toastIcon.innerText = iconName;
+            toastMsg.innerText = message;
+
+            toast.classList.remove('hidden');
+            // Animate In
+            setTimeout(() => {
+                toast.classList.remove('opacity-0', 'translate-y-[-100px]');
+                toast.classList.add('opacity-100', 'translate-y-0');
+            }, 50);
+
+            // Animate Out
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-[-100px]');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 300);
+            }, 3000);
+        }
+
+        // Live Log Dispatcher
+        function addLog(type, text) {
+            const consoleEl = document.getElementById('log-console');
+            const now = new Date();
+            const timeStr = `[${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}]`;
+            
+            const logDiv = document.createElement('div');
+            if (type === 'INFO') {
+                logDiv.className = 'text-slate-300';
+                logDiv.innerText = `${timeStr} INFO: ${text}`;
+            } else if (type === 'WARNING') {
+                logDiv.className = 'text-yellow-400';
+                logDiv.innerText = `${timeStr} WARNING: ${text}`;
+            } else if (type === 'ERROR') {
+                logDiv.className = 'text-red-400 font-bold';
+                logDiv.innerText = `${timeStr} EMERGENCY: ${text}`;
+            } else if (type === 'SUCCESS') {
+                logDiv.className = 'text-green-400';
+                logDiv.innerText = `${timeStr} SUCCESS: ${text}`;
+            }
+            
+            // Console auto-scroll logic handles prepending properly
+            // We append logs but the scroll container has flex-col-reverse so they scroll upward correctly.
+            // Let's insert it before the first child (which is the actual latest due to flex-col-reverse)
+            consoleEl.insertBefore(logDiv, consoleEl.firstChild);
+        }
+
+        function clearLogs() {
+            const consoleEl = document.getElementById('log-console');
+            consoleEl.innerHTML = `
+                <div class="text-slate-500 italic flex justify-between items-center border-t border-slate-800 pt-2 mt-4">
+                    <span>Console log flushed. System active...</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                </div>
+            `;
+            showToast("System activity console cleared.", "delete_sweep");
+        }
+
+        // Emergency Toggle Confirmations
+        let emergencyCheckboxTarget = null;
+        function confirmEmergencyToggle(checkbox) {
+            if (checkbox.checked) {
+                // Open modal
+                document.getElementById('modal-emergency').classList.remove('hidden');
+                emergencyCheckboxTarget = checkbox;
+                checkbox.checked = false; // Reset visually until verified
+            } else {
+                toggleEmergency(false);
+            }
+        }
+
+        function cancelEmergency() {
+            document.getElementById('modal-emergency').classList.add('hidden');
+            if (emergencyCheckboxTarget) {
+                emergencyCheckboxTarget.checked = false;
+            }
+        }
+
+        function executeEmergency() {
+            document.getElementById('modal-emergency').classList.add('hidden');
+            if (emergencyCheckboxTarget) {
+                emergencyCheckboxTarget.checked = true;
+            }
+            toggleEmergency(true);
+        }
+
+        function toggleEmergency(activate) {
+            emergencyMode = activate;
+            const banner = document.getElementById('emergency-banner');
+            const toggle = document.getElementById('toggle-emergency');
+            
+            if (activate) {
+                banner.classList.remove('hidden');
+                toggle.checked = true;
+                playBeep('alert');
+                addLog('ERROR', 'EMERGENCY SHUTDOWN SIGNALLED. Automatic ticketing paused globally.');
+                showToast("System Safety Pause Enabled!", "warning");
+                
+                // Disable calling next buttons visually
+                document.querySelectorAll('button').forEach(btn => {
+                    if (btn.innerText === "Call Next") {
+                        btn.disabled = true;
+                        btn.classList.add('opacity-40', 'cursor-not-allowed');
+                    }
+                });
+            } else {
+                banner.classList.add('hidden');
+                toggle.checked = false;
+                addLog('SUCCESS', 'Safety pause deactivated. Normal check-in services resumed.');
+                showToast("Emergency lockout lifted", "check_circle");
+                
+                // Restore buttons
+                document.querySelectorAll('button').forEach(btn => {
+                    if (btn.innerText === "Call Next") {
+                        // Check if parent clinic is not suspended
+                        btn.disabled = false;
+                        btn.classList.remove('opacity-40', 'cursor-not-allowed');
+                    }
+                });
+            }
+        }
+
+        // Maintenance Toggle Confirmations
+        let maintenanceCheckboxTarget = null;
+        function confirmMaintenanceToggle(checkbox) {
+            if (checkbox.checked) {
+                document.getElementById('modal-maintenance').classList.remove('hidden');
+                maintenanceCheckboxTarget = checkbox;
+                checkbox.checked = false;
+            } else {
+                toggleMaintenance(false);
+            }
+        }
+
+        function cancelMaintenance() {
+            document.getElementById('modal-maintenance').classList.add('hidden');
+            if (maintenanceCheckboxTarget) {
+                maintenanceCheckboxTarget.checked = false;
+            }
+        }
+
+        function executeMaintenance() {
+            document.getElementById('modal-maintenance').classList.add('hidden');
+            if (maintenanceCheckboxTarget) {
+                maintenanceCheckboxTarget.checked = true;
+            }
+            toggleMaintenance(true);
+        }
+
+        function toggleMaintenance(activate) {
+            maintenanceMode = activate;
+            const toggle = document.getElementById('toggle-maintenance');
+            
+            if (activate) {
+                toggle.checked = true;
+                addLog('WARNING', 'Server transitioning to read-only mode for upgrades.');
+                showToast("Maintenance mode active", "construction");
+            } else {
+                toggle.checked = false;
+                addLog('SUCCESS', 'Server transaction channels re-established successfully.');
+                showToast("Database writable", "check_circle");
+            }
+        }
+
+        function toggleAutoCall(checkbox) {
+            autoCallEnabled = checkbox.checked;
+            addLog('INFO', `Auto-Admit AI mode changed to: ${autoCallEnabled ? 'ENABLED' : 'DISABLED'}`);
+            showToast(`Auto-Call ${autoCallEnabled ? 'Enabled' : 'Disabled'}`);
+        }
+
+        // Backup Operation
+        function triggerBackup() {
+            const btn = document.getElementById('btn-backup');
+            const icon = document.getElementById('backup-icon');
+            const text = document.getElementById('backup-text');
+            
+            btn.disabled = true;
+            btn.classList.add('opacity-75');
+            icon.innerText = "sync";
+            icon.classList.add('animate-spin');
+            text.innerText = "Compressing tables & indices...";
+            
+            addLog('INFO', "Initiating structural backup task for tables: Users, Appointments, Queues...");
+            
+            setTimeout(() => {
+                icon.innerText = "task_alt";
+                icon.classList.remove('animate-spin');
+                text.innerText = "Backup Compiled Successfully!";
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-600');
+                
+                addLog('SUCCESS', "Encrypted database backup bundle (24.2MB) uploaded to secure S3 storage node.");
+                showToast("Backup created successfully", "task_alt");
+                
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-75', 'bg-green-600');
+                    btn.classList.add('bg-primary');
+                    icon.innerText = "backup";
+                    text.innerText = "Run System Backup";
+                }, 2000);
+            }, 1800);
+        }
+
+        // Broadcast System Alert Dispatch
+        function setTemplate(msg) {
+            document.getElementById('broadcast-input').value = msg;
+        }
+
+        function publishBroadcast() {
+            const msgInput = document.getElementById('broadcast-input');
+            const message = msgInput.value.trim();
+            
+            if (!message) {
+                showToast("Please enter a alert message first", "warning");
+                return;
+            }
+            
+            // Activate broadcast alert section
+            const section = document.getElementById('broadcasts-section');
+            const txt = document.getElementById('broadcast-message-text');
+            txt.innerText = message;
+            section.classList.remove('hidden');
+            
+            addLog('INFO', `Broadcasting System Banner: "${message}"`);
+            showToast("Broadcast message dispatched!", "campaign");
+            msgInput.value = "";
+        }
+
+        function clearBroadcast() {
+            document.getElementById('broadcasts-section').classList.add('hidden');
+            addLog('INFO', "Broadcast alert cancelled by admin dispatcher.");
+            showToast("Broadcast dismissed");
+        }
+
+        // Department Actions (Call Next / Open Close)
+        function callNext(clinicId) {
+            if (emergencyMode) {
+                showToast("Action rejected: emergency pause active", "error");
+                return;
+            }
+
+            const clinic = clinicQueues[clinicId];
+            if (!clinic || clinic.status !== 'active') return;
+
+            if (clinic.maxQueue <= 0) {
+                showToast(`Queue is empty for ${clinic.name}`, "warning");
+                addLog('WARNING', `Call Next clicked for empty clinic: ${clinic.name}`);
+                return;
+            }
+
+            // Increment Token
+            clinic.current++;
+            clinic.maxQueue--;
+
+            // Update UI Elements
+            const currentTokenStr = `${clinic.prefix}-${String(clinic.current).padStart(3, '0')}`;
+            const nextTokenStr = clinic.maxQueue > 0 ? `${clinic.prefix}-${String(clinic.current + 1).padStart(3, '0')}` : '--';
+
+            // Desktop Updates
+            document.getElementById(`serving-${clinicId}`).innerText = currentTokenStr;
+            document.getElementById(`next-${clinicId}`).innerText = nextTokenStr;
+            document.getElementById(`q-count-${clinicId}`).innerText = clinic.maxQueue;
+
+            // Mobile Updates
+            if (document.getElementById(`mob-q-${clinicId}`)) {
+                document.getElementById(`mob-q-${clinicId}`).innerText = clinic.maxQueue;
+                document.getElementById(`mob-serving-${clinicId}`).innerText = currentTokenStr;
+                document.getElementById(`mob-next-${clinicId}`).innerText = nextTokenStr;
+            }
+
+            playBeep('call');
+            addLog('INFO', `Clinic "${clinic.name}" dispatched token ${currentTokenStr}. Patients in waiting list: ${clinic.maxQueue}.`);
+            showToast(`Called Token ${currentTokenStr} to ${clinic.name}`, "volume_up");
+
+            // Recalculate global metric
+            updateGlobalQueueCount();
+        }
+
+        function toggleClinic(clinicId) {
+            const clinic = clinicQueues[clinicId];
+            if (!clinic) return;
+
+            const btnDesktop = document.getElementById(`btn-toggle-${clinicId}`);
+            const btnMobile = document.getElementById(`mob-btn-toggle-${clinicId}`);
+            const badgeDesktop = document.getElementById(`status-badge-${clinicId}`);
+            const badgeMobile = document.getElementById(`mob-status-${clinicId}`);
+            
+            // Find parent table row or mobile card
+            const tr = document.querySelector(`tr[data-clinic="${clinic.name}"]`);
+            const mobCard = document.querySelector(`div[data-mobile-clinic="${clinic.name}"]`);
+
+            if (clinic.status === 'active') {
+                // Pause Clinic
+                clinic.status = 'paused';
+                addLog('WARNING', `Clinic "${clinic.name}" queue is suspended.`);
+                showToast(`${clinic.name} paused`, "pause");
+                
+                // Desktop UI state update
+                btnDesktop.innerText = "Resume";
+                btnDesktop.classList.remove('border-outline');
+                btnDesktop.classList.add('border-primary', 'text-primary', 'bg-primary/5');
+                
+                badgeDesktop.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse"></span> SUSPENDED`;
+                badgeDesktop.className = "px-2.5 py-1 rounded-full text-xs font-semibold bg-tertiary-fixed text-tertiary flex items-center gap-1 w-fit";
+                
+                // Mobile UI state update
+                if (btnMobile) {
+                    btnMobile.innerText = "Resume";
+                    btnMobile.classList.remove('border-outline');
+                    btnMobile.classList.add('border-primary', 'text-primary');
+                    badgeMobile.innerText = "SUSPENDED";
+                    badgeMobile.className = "px-2 py-0.5 rounded-full text-[10px] font-bold bg-tertiary-fixed text-tertiary";
+                }
+            } else if (clinic.status === 'paused' || clinic.status === 'closed') {
+                // Resume or Open Clinic
+                clinic.status = 'active';
+                
+                // If it was closed, give it mock queue values
+                if (clinicId === 'ortho' && clinic.maxQueue === 0) {
+                    clinic.maxQueue = 5;
+                    clinic.current = 1;
+                    
+                    document.getElementById('q-count-ortho').innerText = 5;
+                    document.getElementById('serving-ortho').innerText = 'O-001';
+                    document.getElementById('serving-ortho').classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+                    document.getElementById('serving-ortho').classList.add('bg-primary-fixed', 'text-on-primary-fixed-variant');
+                    document.getElementById('next-ortho').innerText = 'O-002';
+                    
+                    // Enable call next button
+                    const nextBtn = tr.querySelector('button[disabled]');
+                    if (nextBtn) {
+                        nextBtn.disabled = false;
+                        nextBtn.classList.remove('bg-primary/40', 'cursor-not-allowed');
+                        nextBtn.classList.add('bg-primary', 'hover:bg-primary-container');
+                    }
+                    tr.classList.remove('opacity-60');
+                }
+
+                addLog('SUCCESS', `Clinic "${clinic.name}" queue is fully operational.`);
+                showToast(`${clinic.name} is active`, "check_circle");
+                
+                btnDesktop.innerText = "Pause";
+                btnDesktop.classList.remove('border-primary', 'text-primary', 'bg-primary/5', 'animate-pulse');
+                btnDesktop.classList.add('border-outline', 'text-on-surface-variant');
+                
+                badgeDesktop.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> ACTIVE`;
+                badgeDesktop.className = "px-2.5 py-1 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant flex items-center gap-1 w-fit";
+
+                if (btnMobile) {
+                    btnMobile.innerText = "Pause";
+                    btnMobile.classList.remove('border-primary', 'text-primary');
+                    btnMobile.classList.add('border-outline', 'text-on-surface-variant');
+                    badgeMobile.innerText = "ACTIVE";
+                    badgeMobile.className = "px-2 py-0.5 rounded-full text-[10px] font-bold bg-secondary-container text-on-secondary-fixed-variant";
+                }
+            }
+
+            // Recalculate metrics
+            updateGlobalQueueCount();
+        }
+
+        function updateGlobalQueueCount() {
+            let total = 0;
+            let activeCount = 0;
+            for (const key in clinicQueues) {
+                total += clinicQueues[key].maxQueue;
+                if (clinicQueues[key].status === 'active') {
+                    activeCount++;
+                }
+            }
+            document.getElementById('metric-active-queue').innerText = total;
+            document.getElementById('metric-clinics').innerText = `${activeCount} / 6`;
+        }
+
+        // Live clinic filter
+        function filterClinics() {
+            const query = document.getElementById('clinic-search').value.toLowerCase().trim();
+            
+            // Table filter
+            const rows = document.querySelectorAll('#clinic-table-body tr');
+            rows.forEach(row => {
+                const name = row.getAttribute('data-clinic').toLowerCase();
+                if (name.includes(query)) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+
+            // Mobile filter
+            const mobCards = document.querySelectorAll('#clinic-mobile-list > div');
+            mobCards.forEach(card => {
+                const name = card.getAttribute('data-mobile-clinic').toLowerCase();
+                if (name.includes(query)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Auto Simulated logs & metrics
+        setInterval(() => {
+            if (emergencyMode || maintenanceMode) return;
+            
+            // Random simulated activity
+            const logScenarios = [
+                () => {
+                    // Patient check in
+                    const clinics = ['opd', 'cardio', 'peds', 'derm'];
+                    const chosen = clinics[Math.floor(Math.random() * clinics.length)];
+                    clinicQueues[chosen].maxQueue++;
+                    
+                    document.getElementById(`q-count-${chosen}`).innerText = clinicQueues[chosen].maxQueue;
+                    if (document.getElementById(`mob-q-${chosen}`)) {
+                        document.getElementById(`mob-q-${chosen}`).innerText = clinicQueues[chosen].maxQueue;
+                    }
+                    
+                    const ticket = `${clinicQueues[chosen].prefix}-${String(clinicQueues[chosen].current + clinicQueues[chosen].maxQueue).padStart(3, '0')}`;
+                    addLog('INFO', `Patient checks in via Portal kiosk. Token ${ticket} generated for ${clinicQueues[chosen].name}.`);
+                    updateGlobalQueueCount();
+                },
+                () => {
+                    // System load fluctuation
+                    const currentCpu = 20 + Math.floor(Math.random() * 20);
+                    document.getElementById('cpu-load-val').innerText = currentCpu + '%';
+                    document.getElementById('cpu-load-bar').style.width = currentCpu + '%';
+                },
+                () => {
+                    // Medical personnel logging
+                    const doctors = ['Dr. Phiri', 'Dr. Lungu', 'Dr. Banda', 'Dr. Kapuya'];
+                    const chosenDoc = doctors[Math.floor(Math.random() * doctors.length)];
+                    addLog('INFO', `Session synchronization check completed for ${chosenDoc}. Latency 14ms.`);
+                }
+            ];
+
+            // Perform randomized action
+            const randIdx = Math.floor(Math.random() * logScenarios.length);
+            logScenarios[randIdx]();
+
+        }, 8000);
+
+    </script>
+</body>
+</html>

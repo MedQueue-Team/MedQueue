@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/surface_container_lowest">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Date & Status Row -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvRecordItemDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 Oct 2023"
+                android:textColor="@color/on_primary_fixed_variant"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/tvRecordItemStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Completed"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:background="@drawable/bg_tag_completed"
+                android:textColor="@color/on_secondary_fixed"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <!-- Diagnosis & Clinic details -->
+        <TextView
+            android:id="@+id/tvRecordItemDiagnosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acute Bronchitis"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvRecordItemClinic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dr. Sarah Mensah • City Central Clinic"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="13sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Vitals pill badges -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VISIT VITALS"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:layout_marginBottom="6dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <!-- BP Pill -->
+            <TextView
+                android:id="@+id/tvVitalBP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BP: 120/80"
+                android:textColor="@color/on_secondary_container"
+                android:background="@drawable/bg_rounded_pill_status"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:layout_marginEnd="6dp" />
+
+            <!-- Temp Pill -->
+            <TextView
+                android:id="@+id/tvVitalTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temp: 36.8°C"
+                android:textColor="@color/on_secondary_container"
+                android:background="@drawable/bg_rounded_pill_status"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:layout_marginEnd="6dp" />
+
+            <!-- Heart Rate Pill -->
+            <TextView
+                android:id="@+id/tvVitalPulse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HR: 72 bpm"
+                android:textColor="@color/on_secondary_container"
+                android:background="@drawable/bg_rounded_pill_status"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp" />
+        </LinearLayout>
+
+        <!-- Prescribed Medications -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACTIVE PRESCRIPTIONS"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:layout_marginBottom="6dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <!-- Pill 1 -->
+            <TextView
+                android:id="@+id/tvPresc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amoxicillin 500mg (1x3)"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:background="@drawable/bg_rounded_pill_secondary"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:layout_marginEnd="6dp" />
+
+            <!-- Pill 2 -->
+            <TextView
+                android:id="@+id/tvPresc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paracetamol 500mg (1x2)"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:background="@drawable/bg_rounded_pill_secondary"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp" />
+        </LinearLayout>
+
+        <!-- Separator -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/surface_variant"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Download Action -->
+        <Button
+            android:id="@+id/btnDownloadPrescription"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="DOWNLOAD ACTIVE PRESCRIPTION"
+            android:textColor="@color/primary"
+            app:strokeColor="@color/primary"
+            app:icon="@drawable/ic_download"
+            app:iconTint="@color/primary"
+            app:cornerRadius="10dp"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

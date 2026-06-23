@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Profile - MediQueue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#e59461",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#a1c9ff",
+                        "primary": "#00284b",
+                        "surface-dim": "#d9dade",
+                        "on-tertiary-fixed-variant": "#71370a",
+                        "tertiary-fixed": "#ffdbc8",
+                        "on-secondary-fixed-variant": "#3e4a41",
+                        "secondary-fixed": "#d9e6da",
+                        "on-primary-container": "#7faae1",
+                        "surface-container-high": "#e8e8ec",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#727780",
+                        "on-tertiary-fixed": "#321300",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#a1c9ff",
+                        "on-secondary-container": "#5b675e",
+                        "surface-container-low": "#f3f3f8",
+                        "surface": "#f9f9fe",
+                        "inverse-surface": "#2f3034",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1a1c1f",
+                        "outline-variant": "#c2c6d0",
+                        "on-surface-variant": "#42474f",
+                        "surface-container": "#ededf2",
+                        "on-primary-fixed": "#001c38",
+                        "surface-bright": "#f9f9fe",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#bdcabf",
+                        "primary-fixed": "#d2e4ff",
+                        "background": "#f9f9fe",
+                        "secondary-container": "#d9e6da",
+                        "tertiary-fixed-dim": "#ffb68a",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#336093",
+                        "on-secondary-fixed": "#131e17",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e2e2e7",
+                        "secondary": "#556158",
+                        "surface-container-highest": "#e2e2e7",
+                        "on-primary-fixed-variant": "#14487a",
+                        "on-surface": "#1a1c1f",
+                        "inverse-on-surface": "#f0f0f5",
+                        "tertiary-container": "#642d01",
+                        "error": "#ba1a1a",
+                        "tertiary": "#431c00",
+                        "primary-container": "#003e6f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-tablet": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["11px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9fe;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .clinical-shadow {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface shadow-sm px-margin-mobile py-4 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">My Profile</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Manage your personal information</p>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile max-w-lg mx-auto flex flex-col gap-gutter">
+<!-- Profile Overview Card -->
+<section class="bg-surface-container-lowest rounded-xl clinical-shadow p-gutter flex flex-col items-center gap-4">
+<div class="relative">
+<div class="w-24 h-24 rounded-full border-4 border-primary-fixed overflow-hidden">
+<img alt="Amara Okafor" class="w-full h-full object-cover" data-alt="A professional, clean-lit portrait of a young African woman with a gentle expression and neat hair. She is set against a soft, sterile white background with subtle teal-blue professional lighting. The image evokes a medical-tech aesthetic, high-fidelity and trustworthy, with a focus on clinical clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdAnww2fdW3qk1HJTnhMTh8bI0Bq2x-VVMirZ1-chYqDUxFqoRs2C7tOgzTZoLioWckCBqiue5IAranM4r38TP77M4H3QrBQizf4eJ-cll9WtLkl8rH9BZGL9SZoCID49eabyE0EcX0WqXLJuy7yeLTZIF4fqRlFZ9sHyHZd_IiPuVsx4HUfeTP58he-WT80PIVstDxgZ1cNtMxVJrUJEadNaueH4IO2xJP9W5wB3oTJtpHerlx5vbuK3sjXPgzM9YrhOHnBEktQqY"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center border-2 border-surface shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">camera_alt</span>
+</button>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-headline-md text-primary">Amara Okafor</h2>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-0.5 rounded-full font-label-md text-label-md uppercase tracking-wider">MQ-8821</span>
+</div>
+</div>
+<div class="w-full grid grid-cols-1 gap-2 mt-2 pt-4 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">mail</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">amara.o@healthcare.com</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">call</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+254 712 345 678</span>
+</div>
+</div>
+</section>
+<!-- Account Stats / Info -->
+<section class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container-low p-3 rounded-xl flex flex-col items-center justify-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Joined</span>
+<span class="font-label-lg text-label-lg text-primary">Oct 2023</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl flex flex-col items-center justify-center gap-1 border border-secondary-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Status</span>
+<span class="flex items-center gap-1 font-label-lg text-label-lg text-[#1b5e20]">
+<span class="w-2 h-2 rounded-full bg-[#4caf50]"></span> Active
+                </span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl flex flex-col items-center justify-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Blood</span>
+<span class="font-label-lg text-label-lg text-primary">O+</span>
+</div>
+</section>
+<!-- Edit Form -->
+<section class="flex flex-col gap-6">
+<h3 class="font-headline-sm text-headline-sm text-primary">Personal Details</h3>
+<div class="space-y-4">
+<!-- Full Name -->
+<div class="group">
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1.5 ml-1">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">person</span>
+<input class="w-full bg-surface border border-outline-variant rounded-xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all font-body-md" type="text" value="Amara Okafor"/>
+</div>
+</div>
+<!-- Email -->
+<div class="group">
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1.5 ml-1">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">mail</span>
+<input class="w-full bg-surface border border-outline-variant rounded-xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all font-body-md" type="email" value="amara.o@healthcare.com"/>
+</div>
+</div>
+<!-- Phone -->
+<div class="group">
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1.5 ml-1">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">call</span>
+<input class="w-full bg-surface border border-outline-variant rounded-xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all font-body-md" type="tel" value="+254 712 345 678"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Date of Birth -->
+<div class="group">
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1.5 ml-1">DOB</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">calendar_today</span>
+<input class="w-full bg-surface border border-outline-variant rounded-xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all font-body-md" type="text" value="12/04/1995"/>
+</div>
+</div>
+<!-- Gender -->
+<div class="group">
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1.5 ml-1">Gender</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">person_3</span>
+<select class="w-full bg-surface border border-outline-variant rounded-xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all font-body-md appearance-none">
+<option selected="">Female</option>
+<option>Male</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Address -->
+<div class="group">
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1.5 ml-1">Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-4 text-outline">location_on</span>
+<textarea class="w-full bg-surface border border-outline-variant rounded-xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary-fixed focus:border-primary transition-all font-body-md" rows="3">123 Medical Plaza, Apartment 4B, Nairobi, Kenya</textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<section class="flex flex-col gap-3 mt-4">
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-label-lg text-label-lg shadow-sm active:scale-[0.98] transition-transform duration-150">
+                Save Changes
+            </button>
+<button class="w-full py-4 bg-transparent border-2 border-primary text-primary rounded-xl font-label-lg text-label-lg active:scale-[0.98] transition-transform duration-150">
+                Cancel
+            </button>
+<button class="w-full py-4 mt-4 flex items-center justify-center gap-2 text-error font-label-lg text-label-lg active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface h-16 shadow-[0px_-4px_12px_rgba(0,0,0,0.05)] px-2 pb-safe flex justify-around items-center">
+<!-- Dashboard -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1 hover:bg-surface-container-high transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<!-- Appointments -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1 hover:bg-surface-container-high transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-label-md">Appointments</span>
+</a>
+<!-- Records -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1 hover:bg-surface-container-high transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+<span class="font-label-md text-label-md">Records</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for button feedback
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('click', function(e) {
+                // Prevent default for anchor tags in demo
+                if (this.tagName === 'A') e.preventDefault();
+                
+                const ripple = document.createElement('div');
+                ripple.className = 'absolute inset-0 bg-current opacity-10 pointer-events-none rounded-inherit';
+                this.style.position = 'relative';
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 400);
+            });
+        });
+    </script>
+</body></html>

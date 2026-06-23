@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+            <ImageView
+                android:id="@+id/iv_doctor_photo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_person"
+                android:background="@drawable/bg_card_surface"
+                android:scaleType="centerCrop" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+                <TextView
+                    android:id="@+id/tv_doctor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Sarah Jenkins"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/on_surface" />
+                <TextView
+                    android:id="@+id/tv_doctor_dept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cardiology Department"
+                    android:textSize="12sp"
+                    android:textColor="@color/primary" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_consult_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oct 26"
+                android:textSize="12sp"
+                android:textColor="@color/outline" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_consult_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post-procedural follow up and stress test results evaluation."
+            android:textSize="14sp"
+            android:textColor="@color/on_surface_variant"
+            android:layout_marginBottom="12dp" />
+        <Button
+            android:id="@+id/btn_view_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Details"
+            android:textSize="12sp"
+            android:textColor="@color/primary"
+            android:backgroundTint="@color/surface_container_low"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

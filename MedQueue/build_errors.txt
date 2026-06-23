@@ -1,0 +1,1033 @@
+
+> Configure project :app
+WARNING: The option setting 'android.disableResourceValidation=true' is experimental.
+The current default is 'false'.
+WARNING: The specified Android SDK Build Tools version (34.0.0) is ignored, as it is below the minimum supported version (35.0.0) for Android Gradle Plugin 8.13.2.
+Android SDK Build Tools 35.0.0 will be used.
+To suppress this warning, remove "buildToolsVersion '34.0.0'" from your build.gradle file, as each version of the Android Gradle Plugin now has a default version of the build tools.
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:kaptGenerateStubsDebugKotlin UP-TO-DATE
+> Task :app:kaptDebugKotlin UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+
+> Task :app:compileDebugJavaWithJavac
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/api/ApiService.java:22: error: cannot find symbol
+    Call<ApiModels.ApiResponse<java.util.List<com.example.mediqueue.ui.doctor.DoctorQueueItem>>> getAppointments();
+                                                                             ^
+  symbol:   class DoctorQueueItem
+  location: package com.example.mediqueue.ui.doctor
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:18: error: cannot find symbol
+import com.example.mediqueue.data.local.entities.Appointment;
+                                                ^
+  symbol:   class Appointment
+  location: package com.example.mediqueue.data.local.entities
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:15: error: cannot find symbol
+import com.example.mediqueue.ui.doctor.DoctorSettingsActivity;
+                                      ^
+  symbol:   class DoctorSettingsActivity
+  location: package com.example.mediqueue.ui.doctor
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:16: error: cannot find symbol
+import com.example.mediqueue.ui.patient.PatientAppointmentsActivity;
+                                       ^
+  symbol:   class PatientAppointmentsActivity
+  location: package com.example.mediqueue.ui.patient
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:17: error: cannot find symbol
+import com.example.mediqueue.ui.patient.PatientMedicalRecordsActivity;
+                                       ^
+  symbol:   class PatientMedicalRecordsActivity
+  location: package com.example.mediqueue.ui.patient
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:18: error: cannot find symbol
+import com.example.mediqueue.ui.patient.PatientProfileActivity;
+                                       ^
+  symbol:   class PatientProfileActivity
+  location: package com.example.mediqueue.ui.patient
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:19: error: cannot find symbol
+import com.example.mediqueue.ui.patient.PatientOperationsActivity;
+                                       ^
+  symbol:   class PatientOperationsActivity
+  location: package com.example.mediqueue.ui.patient
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentCardAdapter.java:74: error: method onBindViewHolder(AppointmentCardViewHolder,int) is already defined in class AppointmentCardAdapter
+    public void onBindViewHolder(@NonNull AppointmentCardViewHolder holder, int position) {
+                ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorAppointmentsFragment.java:29: error: cannot find symbol
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+                                                                                                        ^
+  symbol:   class Bundle
+  location: class DoctorAppointmentsFragment
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AdminDashboardActivity.java:31: error: cannot find symbol
+            } else if (id == R.id.nav_admin_appointments) {
+                                 ^
+  symbol:   variable nav_admin_appointments
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AdminDashboardActivity.java:34: error: cannot find symbol
+            } else if (id == R.id.nav_admin_schedule) {
+                                 ^
+  symbol:   variable nav_admin_schedule
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AdminDashboardActivity.java:37: error: cannot find symbol
+            } else if (id == R.id.nav_admin_users) {
+                                 ^
+  symbol:   variable nav_admin_users
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:73: error: cannot find symbol
+            } else if (id == R.id.nav_admin_appointments) {
+                                 ^
+  symbol:   variable nav_admin_appointments
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:75: error: cannot find symbol
+            } else if (id == R.id.nav_admin_schedule) {
+                                 ^
+  symbol:   variable nav_admin_schedule
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:78: error: cannot find symbol
+            } else if (id == R.id.nav_admin_users) {
+                                 ^
+  symbol:   variable nav_admin_users
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:123: error: cannot find symbol
+                if (selectedChipId == R.id.chipRejected) return a.status == Appointment.Status.REJECTED;
+                                          ^
+  symbol:   variable chipRejected
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:133: error: cannot find symbol
+            adapter.updateData(filtered);
+                   ^
+  symbol:   method updateData(List<Appointment>)
+  location: variable adapter of type AppointmentOverviewAdapter
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:29: error: cannot find symbol
+        holder.tvPatientName.setText(appointment.getPatientName());
+                                                ^
+  symbol:   method getPatientName()
+  location: variable appointment of type Appointment
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:30: error: cannot find symbol
+        holder.tvDoctorName.setText(appointment.getDoctorName());
+                                               ^
+  symbol:   method getDoctorName()
+  location: variable appointment of type Appointment
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:31: error: cannot find symbol
+        holder.tvDeptName.setText(appointment.getDepartment());
+                                             ^
+  symbol:   method getDepartment()
+  location: variable appointment of type Appointment
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:32: error: cannot find symbol
+        holder.tvAppointmentTime.setText(appointment.getTime());
+                                                    ^
+  symbol:   method getTime()
+  location: variable appointment of type Appointment
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:34: error: cannot find symbol
+        Appointment.Status status = appointment.getStatus();
+                                               ^
+  symbol:   method getStatus()
+  location: variable appointment of type Appointment
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:38: error: cannot find symbol
+        holder.tvDoctorName.setText(schedule.getDoctorName());
+                                            ^
+  symbol:   method getDoctorName()
+  location: variable schedule of type Schedule
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:39: error: cannot find symbol
+        holder.tvDoctorInitials.setText(getInitials(schedule.getDoctorName()));
+                                                            ^
+  symbol:   method getDoctorName()
+  location: variable schedule of type Schedule
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:40: error: cannot find symbol
+        holder.tvDeptTag.setText(schedule.getDepartment());
+                                         ^
+  symbol:   method getDepartment()
+  location: variable schedule of type Schedule
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:41: error: cannot find symbol
+        holder.tvDays.setText(schedule.getDays());
+                                      ^
+  symbol:   method getDays()
+  location: variable schedule of type Schedule
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:42: error: cannot find symbol
+        holder.tvTime.setText(schedule.getTime());
+                                      ^
+  symbol:   method getTime()
+  location: variable schedule of type Schedule
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:32: error: cannot find symbol
+        rvSchedules = findViewById(R.id.rvSchedules);
+                                       ^
+  symbol:   variable rvSchedules
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:33: error: cannot find symbol
+        spinnerDoctor = findViewById(R.id.spinnerDoctor);
+                                         ^
+  symbol:   variable spinnerDoctor
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:34: error: cannot find symbol
+        spinnerDept = findViewById(R.id.spinnerDept);
+                                       ^
+  symbol:   variable spinnerDept
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:47: error: cannot find symbol
+            } else if (id == R.id.nav_admin_appointments) {
+                                 ^
+  symbol:   variable nav_admin_appointments
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:50: error: cannot find symbol
+            } else if (id == R.id.nav_admin_schedule) {
+                                 ^
+  symbol:   variable nav_admin_schedule
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:52: error: cannot find symbol
+            } else if (id == R.id.nav_admin_users) {
+                                 ^
+  symbol:   variable nav_admin_users
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserAdapter.java:40: error: cannot find symbol
+        holder.tvUserName.setText(user.getName());
+                                      ^
+  symbol:   method getName()
+  location: variable user of type User
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserAdapter.java:42: error: cannot find symbol
+        holder.tvUserPhone.setText(user.getPhone());
+                                       ^
+  symbol:   method getPhone()
+  location: variable user of type User
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserAdapter.java:43: error: no suitable method found for setText(UserRole)
+        holder.tvUserRole.setText(user.getRole());
+                         ^
+    method TextView.setText(CharSequence) is not applicable
+      (argument mismatch; UserRole cannot be converted to CharSequence)
+    method TextView.setText(int) is not applicable
+      (argument mismatch; UserRole cannot be converted to int)
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:47: error: cannot find symbol
+        rvUsers = findViewById(R.id.rv_users);
+                                   ^
+  symbol:   variable rv_users
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:52: error: cannot find symbol
+        etDepartment = findViewById(R.id.etDepartment);
+                                        ^
+  symbol:   variable etDepartment
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:53: error: cannot find symbol
+        etSpecialization = findViewById(R.id.etSpecialization);
+                                            ^
+  symbol:   variable etSpecialization
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:54: error: cannot find symbol
+        spinnerRole = findViewById(R.id.spinnerRole);
+                                       ^
+  symbol:   variable spinnerRole
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:55: error: cannot find symbol
+        llConditionalFields = findViewById(R.id.llConditionalFields);
+                                               ^
+  symbol:   variable llConditionalFields
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:124: error: incompatible types: UserRole cannot be converted to String
+            if (chipId == R.id.chipUserDoctors) return "DOCTOR".equalsIgnoreCase(user.getRole());
+                                                                                             ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:125: error: incompatible types: UserRole cannot be converted to String
+            if (chipId == R.id.chipUserReceptionists) return "RECEPTIONIST".equalsIgnoreCase(user.getRole());
+                                                                                                         ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:126: error: incompatible types: UserRole cannot be converted to String
+            if (chipId == R.id.chipUserAdmins) return "ADMIN".equalsIgnoreCase(user.getRole());
+                                                                                           ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:131: error: cannot find symbol
+            adapter.updateData(filtered);
+                   ^
+  symbol:   method updateData(List<User>)
+  location: variable adapter of type UserAdapter
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:141: error: cannot find symbol
+            } else if (id == R.id.nav_admin_appointments) {
+                                 ^
+  symbol:   variable nav_admin_appointments
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:144: error: cannot find symbol
+            } else if (id == R.id.nav_admin_schedule) {
+                                 ^
+  symbol:   variable nav_admin_schedule
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:147: error: cannot find symbol
+            } else if (id == R.id.nav_admin_users) {
+                                 ^
+  symbol:   variable nav_admin_users
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:156: error: cannot find symbol
+        Toast.makeText(this, "Viewing user: " + user.getName(), Toast.LENGTH_SHORT).show();
+                                                    ^
+  symbol:   method getName()
+  location: variable user of type User
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:161: error: cannot find symbol
+        Toast.makeText(this, "Editing user: " + user.getName(), Toast.LENGTH_SHORT).show();
+                                                    ^
+  symbol:   method getName()
+  location: variable user of type User
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:166: error: cannot find symbol
+        Toast.makeText(this, "Disabling user: " + user.getName(), Toast.LENGTH_SHORT).show();
+                                                      ^
+  symbol:   method getName()
+  location: variable user of type User
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:31: error: cannot find symbol
+        DOCTOR(R.menu.bottom_nav_menu_doctor),
+                     ^
+  symbol:   variable bottom_nav_menu_doctor
+  location: class menu
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:94: error: cannot find symbol
+            openChildScreen(PatientAppointmentsActivity.class);
+                            ^
+  symbol:   class PatientAppointmentsActivity
+  location: class BaseNavActivity
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:98: error: cannot find symbol
+            openChildScreen(PatientMedicalRecordsActivity.class);
+                            ^
+  symbol:   class PatientMedicalRecordsActivity
+  location: class BaseNavActivity
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:102: error: cannot find symbol
+            openChildScreen(PatientProfileActivity.class);
+                            ^
+  symbol:   class PatientProfileActivity
+  location: class BaseNavActivity
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:113: error: cannot find symbol
+            openChildScreen(DoctorSettingsActivity.class);
+                            ^
+  symbol:   class DoctorSettingsActivity
+  location: class BaseNavActivity
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:22: error: package R does not exist
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_appointment, parent, false);
+                                                                      ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:46: error: package R does not exist
+            tvName = itemView.findViewById(R.id.tvApptName);
+                                            ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:47: error: package R does not exist
+            tvReason = itemView.findViewById(R.id.tvApptReason);
+                                              ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:48: error: package R does not exist
+            tvTime = itemView.findViewById(R.id.tvApptTime);
+                                            ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:49: error: package R does not exist
+            tvStatus = itemView.findViewById(R.id.tvApptStatus);
+                                              ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:50: error: package R does not exist
+            tvInitials = itemView.findViewById(R.id.tvApptInitials);
+                                                ^
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:78: error: cannot find symbol
+        headerHistory = root.findViewById(R.id.header_history);
+                                              ^
+  symbol:   variable header_history
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:79: error: cannot find symbol
+        contentHistory = root.findViewById(R.id.content_history);
+                                               ^
+  symbol:   variable content_history
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:80: error: cannot find symbol
+        arrowHistory = root.findViewById(R.id.arrow_history);
+                                             ^
+  symbol:   variable arrow_history
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:82: error: cannot find symbol
+        headerConsultation = root.findViewById(R.id.header_consultation);
+                                                   ^
+  symbol:   variable header_consultation
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:83: error: cannot find symbol
+        contentConsultation = root.findViewById(R.id.content_consultation);
+                                                    ^
+  symbol:   variable content_consultation
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:84: error: cannot find symbol
+        arrowConsultation = root.findViewById(R.id.arrow_consultation);
+                                                  ^
+  symbol:   variable arrow_consultation
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:86: error: cannot find symbol
+        etSymptoms = root.findViewById(R.id.et_symptoms);
+                                           ^
+  symbol:   variable et_symptoms
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:87: error: cannot find symbol
+        etDiagnosis = root.findViewById(R.id.et_diagnosis);
+                                            ^
+  symbol:   variable et_diagnosis
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:88: error: cannot find symbol
+        etPrescription = root.findViewById(R.id.et_prescription);
+                                               ^
+  symbol:   variable et_prescription
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:89: error: cannot find symbol
+        etNotes = root.findViewById(R.id.et_notes);
+                                        ^
+  symbol:   variable et_notes
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:91: error: cannot find symbol
+        btnSaveRecord = root.findViewById(R.id.btn_save_record);
+                                              ^
+  symbol:   variable btn_save_record
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:92: error: cannot find symbol
+        btnCompleteConsultation = root.findViewById(R.id.btn_complete_consultation);
+                                                        ^
+  symbol:   variable btn_complete_consultation
+  location: class id
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:39: error: cannot find symbol
+        holder.binding.tvPatientId.setText(patient.id);
+                      ^
+  symbol:   variable tvPatientId
+  location: variable binding of type ItemDoctorPatientBinding
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:40: error: cannot find symbol
+        holder.binding.tvPatientDept.setText(patient.department);
+                      ^
+  symbol:   variable tvPatientDept
+  location: variable binding of type ItemDoctorPatientBinding
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:41: error: cannot find symbol
+        holder.binding.tvPatientWaitTime.setText(patient.waitingTime);
+                      ^
+  symbol:   variable tvPatientWaitTime
+  location: variable binding of type ItemDoctorPatientBinding
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:42: error: cannot find symbol
+        holder.binding.tvPatientPriority.setText(patient.priority);
+                      ^
+  symbol:   variable tvPatientPriority
+  location: variable binding of type ItemDoctorPatientBinding
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:43: error: cannot find symbol
+        holder.binding.tvPatientInitials.setText(patient.initials);
+                      ^
+  symbol:   variable tvPatientInitials
+  location: variable binding of type ItemDoctorPatientBinding
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientDashboardFragment.java:135: error: cannot find symbol
+                tvRecordDoctor.setText(record.getDoctorName());
+                                             ^
+  symbol:   method getDoctorName()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientDashboardFragment.java:136: error: cannot find symbol
+                tvRecordDiagnosis.setText(record.getDiagnosis());
+                                                ^
+  symbol:   method getDiagnosis()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:110: error: cannot find symbol
+            tvRecordItemDiagnosis.setText(record.getDiagnosis());
+                                                ^
+  symbol:   method getDiagnosis()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:111: error: cannot find symbol
+            tvRecordItemClinic.setText(record.getDoctorName() + " • " + record.getClinicName());
+                                             ^
+  symbol:   method getDoctorName()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:111: error: cannot find symbol
+            tvRecordItemClinic.setText(record.getDoctorName() + " • " + record.getClinicName());
+                                                                              ^
+  symbol:   method getClinicName()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:114: error: cannot find symbol
+            if (record.getDiagnosis().contains("Vaccine") || record.getDiagnosis().contains("Immunization")) {
+                      ^
+  symbol:   method getDiagnosis()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:114: error: cannot find symbol
+            if (record.getDiagnosis().contains("Vaccine") || record.getDiagnosis().contains("Immunization")) {
+                                                                   ^
+  symbol:   method getDiagnosis()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:121: error: cannot find symbol
+            } else if (record.getDiagnosis().contains("Lab")) {
+                             ^
+  symbol:   method getDiagnosis()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:140: error: cannot find symbol
+                Toast.makeText(getContext(), "Downloading Prescription for " + record.getDiagnosis() + "...", Toast.LENGTH_SHORT).show()
+                                                                                     ^
+  symbol:   method getDiagnosis()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:151: error: cannot find symbol
+            PdfExportHelper.exportHistoryToPdf(requireContext(), viewModel.getMedicalHistory().getValue());
+                           ^
+  symbol:   method exportHistoryToPdf(Context,List<MedicalHistory>)
+  location: class PdfExportHelper
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:37: error: cannot find symbol
+                            || (record.getDiagnosis() != null && record.getDiagnosis().toLowerCase().contains(cleanQuery))
+                                      ^
+  symbol:   method getDiagnosis()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:37: error: cannot find symbol
+                            || (record.getDiagnosis() != null && record.getDiagnosis().toLowerCase().contains(cleanQuery))
+                                                                       ^
+  symbol:   method getDiagnosis()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:38: error: cannot find symbol
+                            || (record.getDoctorName() != null && record.getDoctorName().toLowerCase().contains(cleanQuery))
+                                      ^
+  symbol:   method getDoctorName()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:38: error: cannot find symbol
+                            || (record.getDoctorName() != null && record.getDoctorName().toLowerCase().contains(cleanQuery))
+                                                                        ^
+  symbol:   method getDoctorName()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:39: error: cannot find symbol
+                            || (record.getClinicName() != null && record.getClinicName().toLowerCase().contains(cleanQuery));
+                                      ^
+  symbol:   method getClinicName()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:39: error: cannot find symbol
+                            || (record.getClinicName() != null && record.getClinicName().toLowerCase().contains(cleanQuery));
+                                                                        ^
+  symbol:   method getClinicName()
+  location: variable record of type MedicalHistory
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/NurseQueueManagementActivity.java:39: error: constructor QueuePatientAdapter in class QueuePatientAdapter cannot be applied to given types;
+        adapter = new QueuePatientAdapter(patientList);
+                  ^
+  required: List<QueueEntity>,OnPatientActionListener
+  found:    List<QueuePatient>
+  reason: actual and formal argument lists differ in length
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/QueuePatientAdapter.java:41: error: cannot find symbol
+        holder.tvQueueNo.setText(String.valueOf(patient.getQueueNumber()));
+                                                       ^
+  symbol:   method getQueueNumber()
+  location: variable patient of type QueueEntity
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/QueuePatientAdapter.java:42: error: cannot find symbol
+        holder.tvPatientName.setText(patient.getName());
+                                            ^
+  symbol:   method getName()
+  location: variable patient of type QueueEntity
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/QueuePatientAdapter.java:43: error: cannot find symbol
+        holder.tvDeptReg.setText(patient.getDepartment() + " • Reg: " + patient.getRegistrationTime());
+                                        ^
+  symbol:   method getDepartment()
+  location: variable patient of type QueueEntity
+/media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/QueuePatientAdapter.java:43: error: cannot find symbol
+        holder.tvDeptReg.setText(patient.getDepartment() + " • Reg: " + patient.getRegistrationTime());
+                                                                               ^
+  symbol:   method getRegistrationTime()
+  location: variable patient of type QueueEntity
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+100 errors
+
+> Task :app:compileDebugJavaWithJavac FAILED
+
+[Incubating] Problems report is available at: file:///media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugJavaWithJavac'.
+> Compilation failed; see the compiler output below.
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/NurseQueueManagementActivity.java:39: error: constructor QueuePatientAdapter in class QueuePatientAdapter cannot be applied to given types;
+          adapter = new QueuePatientAdapter(patientList);
+                    ^
+    required: List<QueueEntity>,OnPatientActionListener
+    found:    List<QueuePatient>
+    reason: actual and formal argument lists differ in length
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserAdapter.java:43: error: no suitable method found for setText(UserRole)
+          holder.tvUserRole.setText(user.getRole());
+                           ^
+      method TextView.setText(CharSequence) is not applicable
+        (argument mismatch; UserRole cannot be converted to CharSequence)
+      method TextView.setText(int) is not applicable
+        (argument mismatch; UserRole cannot be converted to int)
+  Note: Recompile with -Xlint:deprecation for details.
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:124: error: incompatible types: UserRole cannot be converted to String
+              if (chipId == R.id.chipUserDoctors) return "DOCTOR".equalsIgnoreCase(user.getRole());
+                                                                                               ^
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:125: error: incompatible types: UserRole cannot be converted to String
+              if (chipId == R.id.chipUserReceptionists) return "RECEPTIONIST".equalsIgnoreCase(user.getRole());
+                                                                                                           ^
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:126: error: incompatible types: UserRole cannot be converted to String
+              if (chipId == R.id.chipUserAdmins) return "ADMIN".equalsIgnoreCase(user.getRole());
+                                                                                             ^
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/api/ApiService.java:22: error: cannot find symbol
+      Call<ApiModels.ApiResponse<java.util.List<com.example.mediqueue.ui.doctor.DoctorQueueItem>>> getAppointments();
+                                                                               ^
+    symbol:   class DoctorQueueItem
+    location: package com.example.mediqueue.ui.doctor
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:18: error: cannot find symbol
+  import com.example.mediqueue.data.local.entities.Appointment;
+                                                  ^
+    symbol:   class Appointment
+    location: package com.example.mediqueue.data.local.entities
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:15: error: cannot find symbol
+  import com.example.mediqueue.ui.doctor.DoctorSettingsActivity;
+                                        ^
+    symbol:   class DoctorSettingsActivity
+    location: package com.example.mediqueue.ui.doctor
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:16: error: cannot find symbol
+  import com.example.mediqueue.ui.patient.PatientAppointmentsActivity;
+                                         ^
+    symbol:   class PatientAppointmentsActivity
+    location: package com.example.mediqueue.ui.patient
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:17: error: cannot find symbol
+  import com.example.mediqueue.ui.patient.PatientMedicalRecordsActivity;
+                                         ^
+    symbol:   class PatientMedicalRecordsActivity
+    location: package com.example.mediqueue.ui.patient
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:18: error: cannot find symbol
+  import com.example.mediqueue.ui.patient.PatientProfileActivity;
+                                         ^
+    symbol:   class PatientProfileActivity
+    location: package com.example.mediqueue.ui.patient
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:19: error: cannot find symbol
+  import com.example.mediqueue.ui.patient.PatientOperationsActivity;
+                                         ^
+    symbol:   class PatientOperationsActivity
+    location: package com.example.mediqueue.ui.patient
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorAppointmentsFragment.java:29: error: cannot find symbol
+      public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+                                                                                                          ^
+    symbol:   class Bundle
+    location: class DoctorAppointmentsFragment
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AdminDashboardActivity.java:31: error: cannot find symbol
+              } else if (id == R.id.nav_admin_appointments) {
+                                   ^
+    symbol:   variable nav_admin_appointments
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AdminDashboardActivity.java:34: error: cannot find symbol
+              } else if (id == R.id.nav_admin_schedule) {
+                                   ^
+    symbol:   variable nav_admin_schedule
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AdminDashboardActivity.java:37: error: cannot find symbol
+              } else if (id == R.id.nav_admin_users) {
+                                   ^
+    symbol:   variable nav_admin_users
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:73: error: cannot find symbol
+              } else if (id == R.id.nav_admin_appointments) {
+                                   ^
+    symbol:   variable nav_admin_appointments
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:75: error: cannot find symbol
+              } else if (id == R.id.nav_admin_schedule) {
+                                   ^
+    symbol:   variable nav_admin_schedule
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:78: error: cannot find symbol
+              } else if (id == R.id.nav_admin_users) {
+                                   ^
+    symbol:   variable nav_admin_users
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:123: error: cannot find symbol
+                  if (selectedChipId == R.id.chipRejected) return a.status == Appointment.Status.REJECTED;
+                                            ^
+    symbol:   variable chipRejected
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:32: error: cannot find symbol
+          rvSchedules = findViewById(R.id.rvSchedules);
+                                         ^
+    symbol:   variable rvSchedules
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:33: error: cannot find symbol
+          spinnerDoctor = findViewById(R.id.spinnerDoctor);
+                                           ^
+    symbol:   variable spinnerDoctor
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:34: error: cannot find symbol
+          spinnerDept = findViewById(R.id.spinnerDept);
+                                         ^
+    symbol:   variable spinnerDept
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:47: error: cannot find symbol
+              } else if (id == R.id.nav_admin_appointments) {
+                                   ^
+    symbol:   variable nav_admin_appointments
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:50: error: cannot find symbol
+              } else if (id == R.id.nav_admin_schedule) {
+                                   ^
+    symbol:   variable nav_admin_schedule
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleManagementActivity.java:52: error: cannot find symbol
+              } else if (id == R.id.nav_admin_users) {
+                                   ^
+    symbol:   variable nav_admin_users
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:47: error: cannot find symbol
+          rvUsers = findViewById(R.id.rv_users);
+                                     ^
+    symbol:   variable rv_users
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:52: error: cannot find symbol
+          etDepartment = findViewById(R.id.etDepartment);
+                                          ^
+    symbol:   variable etDepartment
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:53: error: cannot find symbol
+          etSpecialization = findViewById(R.id.etSpecialization);
+                                              ^
+    symbol:   variable etSpecialization
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:54: error: cannot find symbol
+          spinnerRole = findViewById(R.id.spinnerRole);
+                                         ^
+    symbol:   variable spinnerRole
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:55: error: cannot find symbol
+          llConditionalFields = findViewById(R.id.llConditionalFields);
+                                                 ^
+    symbol:   variable llConditionalFields
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:141: error: cannot find symbol
+              } else if (id == R.id.nav_admin_appointments) {
+                                   ^
+    symbol:   variable nav_admin_appointments
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:144: error: cannot find symbol
+              } else if (id == R.id.nav_admin_schedule) {
+                                   ^
+    symbol:   variable nav_admin_schedule
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:147: error: cannot find symbol
+              } else if (id == R.id.nav_admin_users) {
+                                   ^
+    symbol:   variable nav_admin_users
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:31: error: cannot find symbol
+          DOCTOR(R.menu.bottom_nav_menu_doctor),
+                       ^
+    symbol:   variable bottom_nav_menu_doctor
+    location: class menu
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:94: error: cannot find symbol
+              openChildScreen(PatientAppointmentsActivity.class);
+                              ^
+    symbol:   class PatientAppointmentsActivity
+    location: class BaseNavActivity
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:98: error: cannot find symbol
+              openChildScreen(PatientMedicalRecordsActivity.class);
+                              ^
+    symbol:   class PatientMedicalRecordsActivity
+    location: class BaseNavActivity
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:102: error: cannot find symbol
+              openChildScreen(PatientProfileActivity.class);
+                              ^
+    symbol:   class PatientProfileActivity
+    location: class BaseNavActivity
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/base/BaseNavActivity.java:113: error: cannot find symbol
+              openChildScreen(DoctorSettingsActivity.class);
+                              ^
+    symbol:   class DoctorSettingsActivity
+    location: class BaseNavActivity
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:78: error: cannot find symbol
+          headerHistory = root.findViewById(R.id.header_history);
+                                                ^
+    symbol:   variable header_history
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:79: error: cannot find symbol
+          contentHistory = root.findViewById(R.id.content_history);
+                                                 ^
+    symbol:   variable content_history
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:80: error: cannot find symbol
+          arrowHistory = root.findViewById(R.id.arrow_history);
+                                               ^
+    symbol:   variable arrow_history
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:82: error: cannot find symbol
+          headerConsultation = root.findViewById(R.id.header_consultation);
+                                                     ^
+    symbol:   variable header_consultation
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:83: error: cannot find symbol
+          contentConsultation = root.findViewById(R.id.content_consultation);
+                                                      ^
+    symbol:   variable content_consultation
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:84: error: cannot find symbol
+          arrowConsultation = root.findViewById(R.id.arrow_consultation);
+                                                    ^
+    symbol:   variable arrow_consultation
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:86: error: cannot find symbol
+          etSymptoms = root.findViewById(R.id.et_symptoms);
+                                             ^
+    symbol:   variable et_symptoms
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:87: error: cannot find symbol
+          etDiagnosis = root.findViewById(R.id.et_diagnosis);
+                                              ^
+    symbol:   variable et_diagnosis
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:88: error: cannot find symbol
+          etPrescription = root.findViewById(R.id.et_prescription);
+                                                 ^
+    symbol:   variable et_prescription
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:89: error: cannot find symbol
+          etNotes = root.findViewById(R.id.et_notes);
+                                          ^
+    symbol:   variable et_notes
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:91: error: cannot find symbol
+          btnSaveRecord = root.findViewById(R.id.btn_save_record);
+                                                ^
+    symbol:   variable btn_save_record
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorConsultationFragment.java:92: error: cannot find symbol
+          btnCompleteConsultation = root.findViewById(R.id.btn_complete_consultation);
+                                                          ^
+    symbol:   variable btn_complete_consultation
+    location: class id
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:39: error: cannot find symbol
+          holder.binding.tvPatientId.setText(patient.id);
+                        ^
+    symbol:   variable tvPatientId
+    location: variable binding of type ItemDoctorPatientBinding
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:40: error: cannot find symbol
+          holder.binding.tvPatientDept.setText(patient.department);
+                        ^
+    symbol:   variable tvPatientDept
+    location: variable binding of type ItemDoctorPatientBinding
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:41: error: cannot find symbol
+          holder.binding.tvPatientWaitTime.setText(patient.waitingTime);
+                        ^
+    symbol:   variable tvPatientWaitTime
+    location: variable binding of type ItemDoctorPatientBinding
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:42: error: cannot find symbol
+          holder.binding.tvPatientPriority.setText(patient.priority);
+                        ^
+    symbol:   variable tvPatientPriority
+    location: variable binding of type ItemDoctorPatientBinding
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/DoctorPatientsListAdapter.java:43: error: cannot find symbol
+          holder.binding.tvPatientInitials.setText(patient.initials);
+                        ^
+    symbol:   variable tvPatientInitials
+    location: variable binding of type ItemDoctorPatientBinding
+  Note: Some input files use or override a deprecated API.
+  Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:22: error: package R does not exist
+          View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_appointment, parent, false);
+                                                                        ^
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:46: error: package R does not exist
+              tvName = itemView.findViewById(R.id.tvApptName);
+                                              ^
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:47: error: package R does not exist
+              tvReason = itemView.findViewById(R.id.tvApptReason);
+                                                ^
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:48: error: package R does not exist
+              tvTime = itemView.findViewById(R.id.tvApptTime);
+                                              ^
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:49: error: package R does not exist
+              tvStatus = itemView.findViewById(R.id.tvApptStatus);
+                                                ^
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentAdapter.java:50: error: package R does not exist
+              tvInitials = itemView.findViewById(R.id.tvApptInitials);
+                                                  ^
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewActivity.java:133: error: cannot find symbol
+              adapter.updateData(filtered);
+                     ^
+    symbol:   method updateData(List<Appointment>)
+    location: variable adapter of type AppointmentOverviewAdapter
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:29: error: cannot find symbol
+          holder.tvPatientName.setText(appointment.getPatientName());
+                                                  ^
+    symbol:   method getPatientName()
+    location: variable appointment of type Appointment
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:30: error: cannot find symbol
+          holder.tvDoctorName.setText(appointment.getDoctorName());
+                                                 ^
+    symbol:   method getDoctorName()
+    location: variable appointment of type Appointment
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:31: error: cannot find symbol
+          holder.tvDeptName.setText(appointment.getDepartment());
+                                               ^
+    symbol:   method getDepartment()
+    location: variable appointment of type Appointment
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:32: error: cannot find symbol
+          holder.tvAppointmentTime.setText(appointment.getTime());
+                                                      ^
+    symbol:   method getTime()
+    location: variable appointment of type Appointment
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/AppointmentOverviewAdapter.java:34: error: cannot find symbol
+          Appointment.Status status = appointment.getStatus();
+                                                 ^
+    symbol:   method getStatus()
+    location: variable appointment of type Appointment
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:38: error: cannot find symbol
+          holder.tvDoctorName.setText(schedule.getDoctorName());
+                                              ^
+    symbol:   method getDoctorName()
+    location: variable schedule of type Schedule
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:39: error: cannot find symbol
+          holder.tvDoctorInitials.setText(getInitials(schedule.getDoctorName()));
+                                                              ^
+    symbol:   method getDoctorName()
+    location: variable schedule of type Schedule
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:40: error: cannot find symbol
+          holder.tvDeptTag.setText(schedule.getDepartment());
+                                           ^
+    symbol:   method getDepartment()
+    location: variable schedule of type Schedule
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:41: error: cannot find symbol
+          holder.tvDays.setText(schedule.getDays());
+                                        ^
+    symbol:   method getDays()
+    location: variable schedule of type Schedule
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/ScheduleAdapter.java:42: error: cannot find symbol
+          holder.tvTime.setText(schedule.getTime());
+                                        ^
+    symbol:   method getTime()
+    location: variable schedule of type Schedule
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserAdapter.java:40: error: cannot find symbol
+          holder.tvUserName.setText(user.getName());
+                                        ^
+    symbol:   method getName()
+    location: variable user of type User
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserAdapter.java:42: error: cannot find symbol
+          holder.tvUserPhone.setText(user.getPhone());
+                                         ^
+    symbol:   method getPhone()
+    location: variable user of type User
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:131: error: cannot find symbol
+              adapter.updateData(filtered);
+                     ^
+    symbol:   method updateData(List<User>)
+    location: variable adapter of type UserAdapter
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:156: error: cannot find symbol
+          Toast.makeText(this, "Viewing user: " + user.getName(), Toast.LENGTH_SHORT).show();
+                                                      ^
+    symbol:   method getName()
+    location: variable user of type User
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:161: error: cannot find symbol
+          Toast.makeText(this, "Editing user: " + user.getName(), Toast.LENGTH_SHORT).show();
+                                                      ^
+    symbol:   method getName()
+    location: variable user of type User
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/admin/UserManagementActivity.java:166: error: cannot find symbol
+          Toast.makeText(this, "Disabling user: " + user.getName(), Toast.LENGTH_SHORT).show();
+                                                        ^
+    symbol:   method getName()
+    location: variable user of type User
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientDashboardFragment.java:135: error: cannot find symbol
+                  tvRecordDoctor.setText(record.getDoctorName());
+                                               ^
+    symbol:   method getDoctorName()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientDashboardFragment.java:136: error: cannot find symbol
+                  tvRecordDiagnosis.setText(record.getDiagnosis());
+                                                  ^
+    symbol:   method getDiagnosis()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:110: error: cannot find symbol
+              tvRecordItemDiagnosis.setText(record.getDiagnosis());
+                                                  ^
+    symbol:   method getDiagnosis()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:111: error: cannot find symbol
+              tvRecordItemClinic.setText(record.getDoctorName() + " • " + record.getClinicName());
+                                               ^
+    symbol:   method getDoctorName()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:111: error: cannot find symbol
+              tvRecordItemClinic.setText(record.getDoctorName() + " • " + record.getClinicName());
+                                                                                ^
+    symbol:   method getClinicName()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:114: error: cannot find symbol
+              if (record.getDiagnosis().contains("Vaccine") || record.getDiagnosis().contains("Immunization")) {
+                        ^
+    symbol:   method getDiagnosis()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:114: error: cannot find symbol
+              if (record.getDiagnosis().contains("Vaccine") || record.getDiagnosis().contains("Immunization")) {
+                                                                     ^
+    symbol:   method getDiagnosis()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:121: error: cannot find symbol
+              } else if (record.getDiagnosis().contains("Lab")) {
+                               ^
+    symbol:   method getDiagnosis()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:140: error: cannot find symbol
+                  Toast.makeText(getContext(), "Downloading Prescription for " + record.getDiagnosis() + "...", Toast.LENGTH_SHORT).show()
+                                                                                       ^
+    symbol:   method getDiagnosis()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsFragment.java:151: error: cannot find symbol
+              PdfExportHelper.exportHistoryToPdf(requireContext(), viewModel.getMedicalHistory().getValue());
+                             ^
+    symbol:   method exportHistoryToPdf(Context,List<MedicalHistory>)
+    location: class PdfExportHelper
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:37: error: cannot find symbol
+                              || (record.getDiagnosis() != null && record.getDiagnosis().toLowerCase().contains(cleanQuery))
+                                        ^
+    symbol:   method getDiagnosis()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:37: error: cannot find symbol
+                              || (record.getDiagnosis() != null && record.getDiagnosis().toLowerCase().contains(cleanQuery))
+                                                                         ^
+    symbol:   method getDiagnosis()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:38: error: cannot find symbol
+                              || (record.getDoctorName() != null && record.getDoctorName().toLowerCase().contains(cleanQuery))
+                                        ^
+    symbol:   method getDoctorName()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:38: error: cannot find symbol
+                              || (record.getDoctorName() != null && record.getDoctorName().toLowerCase().contains(cleanQuery))
+                                                                          ^
+    symbol:   method getDoctorName()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:39: error: cannot find symbol
+                              || (record.getClinicName() != null && record.getClinicName().toLowerCase().contains(cleanQuery));
+                                        ^
+    symbol:   method getClinicName()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/patient/PatientMedicalRecordsViewModel.java:39: error: cannot find symbol
+                              || (record.getClinicName() != null && record.getClinicName().toLowerCase().contains(cleanQuery));
+                                                                          ^
+    symbol:   method getClinicName()
+    location: variable record of type MedicalHistory
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/QueuePatientAdapter.java:41: error: cannot find symbol
+          holder.tvQueueNo.setText(String.valueOf(patient.getQueueNumber()));
+                                                         ^
+    symbol:   method getQueueNumber()
+    location: variable patient of type QueueEntity
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/QueuePatientAdapter.java:42: error: cannot find symbol
+          holder.tvPatientName.setText(patient.getName());
+                                              ^
+    symbol:   method getName()
+    location: variable patient of type QueueEntity
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/QueuePatientAdapter.java:43: error: cannot find symbol
+          holder.tvDeptReg.setText(patient.getDepartment() + " • Reg: " + patient.getRegistrationTime());
+                                          ^
+    symbol:   method getDepartment()
+    location: variable patient of type QueueEntity
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/receptionist/QueuePatientAdapter.java:43: error: cannot find symbol
+          holder.tvDeptReg.setText(patient.getDepartment() + " • Reg: " + patient.getRegistrationTime());
+                                                                                 ^
+    symbol:   method getRegistrationTime()
+    location: variable patient of type QueueEntity
+  /media/mbc/94E8BCFCE8BCDDA45/BOSAM/BACKEND/MediQueue/app/src/main/java/com/example/mediqueue/ui/doctor/AppointmentCardAdapter.java:74: error: method onBindViewHolder(AppointmentCardViewHolder,int) is already defined in class AppointmentCardAdapter
+      public void onBindViewHolder(@NonNull AppointmentCardViewHolder holder, int position) {
+                  ^
+  100 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 11s
+24 actionable tasks: 2 executed, 22 up-to-date

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvApptInitials"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:text="MP"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tvApptName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Mary Phiri"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tvApptInitials"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvApptReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reason: Headache"
+            android:textColor="@color/outline"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tvApptName"
+            app:layout_constraintTop_toBottomOf="@id/tvApptName" />
+
+        <TextView
+            android:id="@+id/tvApptTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:30 AM"
+            android:textColor="@color/outline"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/btnMore"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8dp"
+            android:gravity="end" />
+
+        <TextView
+            android:id="@+id/tvApptStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="APPROVED"
+            android:textColor="@color/primary"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btnMore"
+            app:layout_constraintTop_toBottomOf="@id/tvApptTime"
+            android:layout_marginEnd="8dp"
+            android:gravity="end" />
+
+        <ImageButton
+            android:id="@+id/btnMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_more"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

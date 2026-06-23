@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#00284b</color>
+    <color name="on_primary">#ffffff</color>
+    <color name="primary_container">#003e6f</color>
+    <color name="on_primary_container">#7faae1</color>
+    <color name="primary_fixed">#d2e4ff</color>
+    <color name="on_primary_fixed">#001c38</color>
+    <color name="on_primary_fixed_variant">#14487a</color>
+    
+    <color name="secondary">#556158</color>
+    <color name="on_secondary">#ffffff</color>
+    <color name="secondary_container">#d9e6da</color>
+    <color name="on_secondary_container">#5b675e</color>
+    <color name="secondary_fixed">#d9e6da</color>
+    <color name="on_secondary_fixed">#131e17</color>
+    
+    <color name="tertiary">#431c00</color>
+    <color name="on_tertiary">#ffffff</color>
+    <color name="tertiary_container">#642d01</color>
+    <color name="on_tertiary_container">#e59461</color>
+    <color name="tertiary_fixed">#ffdbc8</color>
+    <color name="on_tertiary_fixed_variant">#71370a</color>
+    <color name="on_tertiary_fixed">#321300</color>
+    
+    <color name="background">#f9f9fe</color>
+    <color name="on_background">#1a1c1f</color>
+    
+    <color name="surface">#f9f9fe</color>
+    <color name="on_surface">#1a1c1f</color>
+    <color name="surface_variant">#e2e2e7</color>
+    <color name="on_surface_variant">#42474f</color>
+    <color name="surface_bright">#f9f9fe</color>
+    <color name="surface_dim">#d9dade</color>
+    <color name="surface_container">#ededf2</color>
+    <color name="surface_container_low">#f3f3f8</color>
+    <color name="surface_container_high">#e8e8ec</color>
+    <color name="surface_container_highest">#e2e2e7</color>
+    <color name="surface_container_lowest">#ffffff</color>
+    
+    <color name="outline">#727780</color>
+    <color name="outline_variant">#c2c6d0</color>
+    
+    <color name="error">#ba1a1a</color>
+    <color name="on_error">#ffffff</color>
+    <color name="error_container">#ffdad6</color>
+    <color name="on_error_container">#93000a</color>
+
+    <!-- Triage Spectrum -->
+    <color name="triage_emergency">#B71C1C</color>
+    <color name="triage_urgent">#E65100</color>
+    <color name="triage_medium">#F9A825</color>
+    <color name="triage_low">#0D47A1</color>
+    <color name="white">#ffffff</color>
+</resources>

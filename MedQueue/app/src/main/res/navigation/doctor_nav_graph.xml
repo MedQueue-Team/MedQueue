@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/doctor_nav_graph"
+    app:startDestination="@id/nav_doctor_home">
+
+    <fragment
+        android:id="@+id/nav_doctor_home"
+        android:name="com.example.mediqueue.ui.doctor.DoctorDashboardFragment"
+        android:label="Doctor Home"
+        tools:layout="@layout/fragment_doctor_dashboard">
+        <action
+            android:id="@+id/action_home_to_appointments"
+            app:destination="@id/nav_doctor_appointments" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_doctor_appointments"
+        android:name="com.example.mediqueue.ui.doctor.DoctorAppointmentsFragment"
+        android:label="Doctor Appointments"
+        tools:layout="@layout/fragment_doctor_appointments">
+        <action
+            android:id="@+id/action_appointments_to_consultation"
+            app:destination="@id/nav_doctor_consultation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_doctor_consultation"
+        android:name="com.example.mediqueue.ui.doctor.DoctorConsultationFragment"
+        android:label="Doctor Consultation"
+        tools:layout="@layout/fragment_doctor_consultation" />
+
+    <fragment
+        android:id="@+id/nav_doctor_call_patient"
+        android:name="com.example.mediqueue.ui.doctor.DoctorCallPatientFragment"
+        android:label="Call Patient"
+        tools:layout="@layout/fragment_doctor_call_patient" />
+
+</navigation>

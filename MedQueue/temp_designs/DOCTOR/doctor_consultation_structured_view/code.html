@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Consultation - MediQueue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9fe; /* surface-bright */
+            color: #1a1c1f; /* on-surface */
+        }
+        .clinical-shadow {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#d9e6da",
+                        "secondary": "#556158",
+                        "secondary-fixed-dim": "#bdcabf",
+                        "on-secondary-fixed": "#131e17",
+                        "primary-fixed-dim": "#a1c9ff",
+                        "inverse-primary": "#a1c9ff",
+                        "tertiary-container": "#642d01",
+                        "on-secondary-container": "#5b675e",
+                        "secondary-fixed": "#d9e6da",
+                        "surface-container-low": "#f3f3f8",
+                        "surface-dim": "#d9dade",
+                        "tertiary": "#431c00",
+                        "inverse-on-surface": "#f0f0f5",
+                        "surface-tint": "#336093",
+                        "outline-variant": "#c2c6d0",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2f3034",
+                        "primary-fixed": "#d2e4ff",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#ededf2",
+                        "outline": "#727780",
+                        "on-surface": "#1a1c1f",
+                        "on-background": "#1a1c1f",
+                        "on-primary-fixed-variant": "#14487a",
+                        "on-secondary-fixed-variant": "#3e4a41",
+                        "on-primary-container": "#7faae1",
+                        "tertiary-fixed": "#ffdbc8",
+                        "surface-container-high": "#e8e8ec",
+                        "on-tertiary-container": "#e59461",
+                        "on-surface-variant": "#42474f",
+                        "surface-variant": "#e2e2e7",
+                        "surface": "#f9f9fe",
+                        "surface-bright": "#f9f9fe",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "primary-container": "#003e6f",
+                        "on-tertiary-fixed-variant": "#71370a",
+                        "on-tertiary-fixed": "#321300",
+                        "primary": "#00284b",
+                        "background": "#f9f9fe",
+                        "tertiary-fixed-dim": "#ffb68a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001c38",
+                        "surface-container-highest": "#e2e2e7",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "margin-tablet": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "headline-sm": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-high transition-colors rounded-full p-2 flex items-center justify-center opacity-80 scale-95 transition-all">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary">Consultation</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="px-margin-mobile pt-6 space-y-6 max-w-md mx-auto">
+<!-- Patient Summary Card -->
+<section class="bg-surface-container-lowest rounded-xl clinical-shadow p-6 flex items-start gap-4"><div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="Elena Rodriguez" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlVTKegkijEGIBKu341hm3h9SOMed0-iAZ2XuZR_oIb2i8HPhNRWiaWtzuqCC5ghPCmR9-erzxakUhy-11c1OdyaReBZlYZag19klqIn6NhwT39_mbdjKxIZ2S02BrgjpFltvEf47zHH8SkYLP1Sd7bvXfqqNEiulRzc4CsB2N9FTF2bCYOVbyOO1769bNo0AvXXrNR08cY7V77KepUsJfY259N2OHsrHaWkpIt-5CX5BAuXuAqZvZbKGtpLdb-eKoiN0rwJi5ae0"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Elena Rodriguez</h2>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-0.5">32Y, Female • O+ Positive</p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">Active</span>
+<span class="font-headline-sm text-primary font-bold">A-12</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-label-md text-label-md mt-1">ID: LSK-KNH-004582</p>
+</div></section>
+<!-- Diagnosis Input -->
+<!-- Prescription Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-center">
+</div>
+</section>
+<!-- Clinical Notes -->
+<!-- Actions -->
+<section class="space-y-4">
+<details class="group bg-surface-container-lowest rounded-xl clinical-shadow overflow-hidden" open="">
+<summary class="flex justify-between items-center p-4 cursor-pointer hover:bg-surface-container-low transition-colors list-none">
+<span class="font-headline-sm text-primary">Medical History</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-4 border-t border-outline-variant space-y-4">
+<div class="space-y-2">
+<h4 class="font-label-lg text-secondary">Previous Diagnoses</h4>
+<p class="text-body-sm text-on-surface-variant">No significant previous diagnoses found.</p>
+</div>
+<div class="space-y-2">
+<h4 class="font-label-lg text-secondary">Previous Prescriptions</h4>
+<p class="text-body-sm text-on-surface-variant">Aspirin 75mg (Jan 2024)</p>
+</div>
+<div class="space-y-2">
+<h4 class="font-label-lg text-secondary">Past Consultations</h4>
+<p class="text-body-sm text-on-surface-variant">General Checkup (05/01/2024)</p>
+</div>
+</div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl clinical-shadow overflow-hidden" open="">
+<summary class="flex justify-between items-center p-4 cursor-pointer hover:bg-surface-container-low transition-colors list-none">
+<span class="font-headline-sm text-primary">Current Consultation</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-4 border-t border-outline-variant space-y-4">
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Symptoms</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary text-body-sm" placeholder="Enter patient symptoms..." rows="2"></textarea>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Diagnosis</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary text-body-sm" placeholder="Enter diagnosis..." type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Prescription</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary text-body-sm" placeholder="List medications and dosages..." rows="2"></textarea>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Notes</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary text-body-sm" placeholder="Additional clinical notes..." rows="3"></textarea>
+</div>
+</div>
+</details>
+</section><section class="flex flex-col gap-3 pt-4">
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-lg py-4 rounded-xl hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">save</span>
+    SAVE RECORD
+  </button>
+<button class="w-full bg-primary text-on-primary font-label-lg py-4 rounded-xl shadow-md hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">task_alt</span>
+    COMPLETE CONSULTATION
+  </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-surface border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1.5 hover:bg-surface-variant transition-colors rounded-xl">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm-mobile">Home</span>
+</div>
+<!-- Active Tab: Patients -->
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1.5 scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>group</span>
+<span class="font-label-sm text-label-sm-mobile">Patients</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1.5 hover:bg-surface-variant transition-colors rounded-xl">
+<span class="material-symbols-outlined">medication</span>
+<span class="font-label-sm text-label-sm-mobile">Prescribe</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1.5 hover:bg-surface-variant transition-colors rounded-xl">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-sm text-label-sm-mobile">Records</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1.5 hover:bg-surface-variant transition-colors rounded-xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm-mobile">Profile</span>
+</div>
+</nav>
+</body></html>
